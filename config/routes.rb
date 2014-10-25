@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   # what this site is about
   get '/about' => 'home#about'
 
+  # instructions on how to use site
+  get '/help' => 'home#help'
+
   # lets users sign in or join site
   post '/users' => 'users#create'
   post '/sessions' => 'sessions#create'

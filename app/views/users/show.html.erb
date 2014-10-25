@@ -1,21 +1,23 @@
 <div class="full-background">
   <div class="container">
   <h3>Hello <%= @user.fname %></h3>
-    
-    <% @user.tutorials.each do |tutorial| %>
-      <div class="tutorials-container">
 
-        <div>
-          <%= link_to show_tutorials_path(tutorial) do %>
-            <%= image_tag tutorial.main_image (:medium), :class => "image" %>
-          <% end %>
+    <% if @user.tutorials.any? %>  
+
+      <% @user.tutorials.each do |tutorial| %>
+        <div class="tutorials-container">
+          <div>
+            <%= link_to show_tutorials_path(tutorial) do %>
+              <%= image_tag tutorial.main_image (:medium), :class => "image" %>
+            <% end %>
+          </div>
+          <div>
+            <%= link_to tutorial.title, show_tutorials_path(tutorial) %>
+          </div>
         </div>
-
-        <div>
-          <%= link_to tutorial.title, show_tutorials_path(tutorial) %>
-        </div>
-
-      </div>
+      <% end %>
+    <% else %>
+      <%= render partial: 'layouts/shared/instructions' %>
     <% end %>
   </div>
 </div>

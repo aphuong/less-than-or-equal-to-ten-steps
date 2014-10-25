@@ -58,9 +58,13 @@
 .about-text {
   font-size: $medium;
   line-height: 160%;
-  width: 40%;
+  width: 41%;
   margin: 0 auto;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
+
+  span {
+    font-family: $font-fancy;
+  }
 }
 
 
