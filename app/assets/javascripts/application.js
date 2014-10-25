@@ -17,11 +17,11 @@
 //= require_tree .
 
 $(document).ready(function(){
-  
-  $(window).load(function() {
-    $('.flexslider').flexslider({
-      animation: "slide"
-    });
+
+  $('.flexslider').flexslider({
+    animation: "slide",
+    slideshow: false,
+    touch: true
   });
 
   $(".shim").on("click", function(){
@@ -54,10 +54,10 @@ $(document).ready(function(){
   // });
 
   // $(".cat-image").hover(function(){
-  //   $(this).stop().animate({"opacity": 1}); 
+  //   $(this).stop().animate({"opacity": 1});
   //   $(".category-name").show();
-  //   },function() { 
-  //   $(this).stop().animate({"opacity": 0.8}); 
+  //   },function() {
+  //   $(this).stop().animate({"opacity": 0.8});
   //   $(".category-name").hide();
   // });
 

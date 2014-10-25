@@ -5,6 +5,8 @@ class HomeController < ApplicationController
     @user = User.new
   end
 
-
+  def about
+    @user = User.new
+  end
   
 end

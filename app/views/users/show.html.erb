@@ -1,32 +1,7 @@
-<div class="container">
-    
-  <h3>Hello <%= @user.fname %></h3>
-  
-  <div class="flexslider">
-    <ul class="slides">
-      <li>
-        <%= image_tag "15.jpg" %>
-        <p>one</p>
-      </li>
-      <li>
-        <%= image_tag "4.jpg" %>
-        <p>two</p>
-      </li>
-      <li>
-        <%= image_tag "5.jpg" %>
-        <p>three</p>
-      </li>
-      <li>
-        <%= image_tag "4.jpg" %>
-        <p>four</p>
-      </li>
-    </ul>
-  </div>
-</div>
-
 <div class="full-background">
   <div class="container">
-
+  <h3>Hello <%= @user.fname %></h3>
+    
     <% @user.tutorials.each do |tutorial| %>
       <div class="tutorials-container">
 

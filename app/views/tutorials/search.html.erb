@@ -1,28 +1,34 @@
-<div class="wrapper">
+<div class="full-background">
+  <div class="container">
 
-  <% if @tutorials.any? %>
-    <h1>Search Result:</h1>
+    <% if @tutorials.any? %>
+      <h1>Search Result:</h1>
 
-    <% @tutorials.each do |t| %>
-      
-      <div class="tutorials-container">
-        <h1><%= t.title %></h1>
+      <% @tutorials.each do |t| %>
+        
+        <div class="tutorials-container">
 
-        <div class="tutorial-main-image">
-          <%= image_tag t.main_image (:medium) %>
+          <div>
+          <%= link_to show_tutorials_path(t) do %>
+            <%= image_tag t.main_image (:medium) %>
+          <% end %>
+          </div>
+
+           <div>
+            <%= link_to t.title, show_tutorials_path(t) %>
+            <p>submitted by: <%= t.user.fname %></p>
+          </div>
+
         </div>
 
-        <div class="tutorial-text">
-          <p><strong>Shared by:</strong> <%= t.user.fname %></p>
-
-          <p><strong>Supplies Needed:</strong> <%= t.supplies %></p>
-
-          <p>#<%= t.category.name %></p>
-        </div>
-      </div>
+      <% end %>
+    <% else %>
+        <h1>Looks like there are no tutorial titles containing that keyword.</h1>
+        <%= link_to "Click here to explore all tutorials!", tutorials_path %>
     <% end %>
-  <% else %>
-      <h1>Looks like there are no tutorial titles containing that keyword.</h1>
-      <%= link_to "Click here to explore all tutorials!", tutorials_path %>
-  <% end %>
+  </div>
 </div>
+
+
+
+       

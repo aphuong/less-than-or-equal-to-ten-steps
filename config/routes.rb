@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   # homepage with all categories listed
   root 'home#index'
 
+  # what this site is about
+  get '/about' => 'home#about'
+
   # lets users sign in or join site
   post '/users' => 'users#create'
   post '/sessions' => 'sessions#create'

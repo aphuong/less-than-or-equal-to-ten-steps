@@ -8,9 +8,10 @@
     </div>
 
     <div class="tutorial-text">
-      <p><strong>Shared by:</strong> <%= @tutorial.user.fname %></p>
+      <p><strong>Shared by:</strong><%= @tutorial.user.fname %></p>
 
-      <p><strong>Supplies Needed:</strong> <%= @tutorial.supplies %></p>
+      <p><strong>Supplies Needed:</strong></p>
+      <p class="supplies"><%= @tutorial.supplies %></p>
 
       <p>#<%= @tutorial.category.name %></p>
     </div>
@@ -24,7 +25,7 @@
 
         <div class="form-group">
           <%= f.label :body, "List up to 10 steps below!" %>
-          <%= f.text_area :body, class: "text-area-control", autofocus: true, placeholder: "Describe the step..." %>
+          <%= f.text_area :body, class: "text-area-control", autofocus: true, placeholder: "Describe the step...", required: true %>
         </div>
 
         <div class="form-group">
