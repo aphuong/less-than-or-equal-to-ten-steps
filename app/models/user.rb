@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  include Gravtastic
+  gravtastic
+  
   attr_accessor :password
   validates_confirmation_of :password
   before_save :encrypt_password

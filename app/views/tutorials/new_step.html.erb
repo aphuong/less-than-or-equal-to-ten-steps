@@ -23,19 +23,25 @@
     <%= form_for @step, url: create_tutorial_step_path, html: { id: "step-form" } do |f| %>
       <div class="steps-wrapper">
 
+
         <div class="form-group">
           <%= f.label :body, "List up to 10 steps below!" %>
-          <%= f.text_area :body, class: "text-area-control", autofocus: true, placeholder: "Describe the step...", required: true %>
+
+          <%= f.text_area :body, :maxlength => 230, class: "text-area-control", autofocus: true, placeholder: "Describe the step...", required: true %>
         </div>
 
         <div class="form-group">
           <%= f.label :step_image, "Upload Photo For This Step: " %>
           <%= f.file_field :step_image, class: "form-image" %>
         </div>
-
-        <%= f.submit "Add step", class: "submit-btn" %>
-        <%= link_to "Finished", show_tutorials_path(@tutorial), class: "submit-btn" %>
+        
+        <%= f.submit "ADD STEP", class: "submit-btn" %>
+        <%= link_to "FINISHED", show_tutorials_path(@tutorial), class: "submit-btn" %>
+        <p>Current Step Count: 
+          <span><%= @tutorial.steps.count %></span>
+        </p>
       </div>
+
     <% end %>
 
     <% @tutorial.steps.each_with_index do |step, i| %>
@@ -49,12 +55,26 @@
       </div>
     <% end %>
 
-  
 
   <% else %>
-    <div class="error-msg">
-      <p>We're sorry. You exceeded the maximum number of steps allowed. Try creating a new post or edit an existing one.</p>
+    <div class="step-review-wrapper">
+      <p>Looks like you exceeded the maximum number of steps allowed.</p>
+      <p>Try creating a new post or edit an existing one.</p>
+      <%= link_to "VIEW TUTORIAL", show_tutorials_path(@tutorial), class: "submit-btn" %>
+      <%= link_to "CREATE", new_tutorial_path(current_user), class: "submit-btn"  %>
     </div>
+
+    <% @tutorial.steps.each_with_index do |step, i| %>
+      <div class="step-review-wrapper">
+        <h5>Step. <%= i + 1 %></h5>
+        <h5><%= step.body %></h5>
+
+        <% if step.step_image.exists? %>
+          <%= image_tag step.step_image (:medium) %>
+        <% end %>
+      </div>
+    <% end %>
+
   <% end %>
 
 </div>

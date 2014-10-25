@@ -1,15 +1,27 @@
-<h3>Need some inspiration? Click "HOME" to browse current categories and tutorials.</h3>
+<h3>Need some inspiration? Click "HOME" to browse categories and tutorials.</h3>
 <h3>If you have a tutorial that is less than or equal to 10 steps:</h3>
-<p>Here are a few steps to help you get started:</p>
+<p>Here's how you can get started</p>
 
-<ol>
-  <li><p>Click on the "CREATE" link below, or whenever you are signed in, find it at the top of the page.</p></li>
-  <li><p>On that page, you can give your tutorial a title, upload a cover image, and list the supplies needed.</p></li>
-  <li><p>Follow the directions and click "Add Steps" when you are ready.</p></li>
-  <li><p>Add up to 10 steps, and don't forget to include some awesome photos!</p></li>
-  
-  <div class="create-btn">
-    <%= link_to "CREATE", new_tutorial_path(current_user) %> |
-    <%= link_to "HOME", root_path %>
-  </div>
-</ol>
+<% if current_user %>
+  <ol>
+    <li><p>Click on the "CREATE" link below, or whenever you are signed in, find it at the top of the page.</p></li>
+    <li><p>On that page, you can give your tutorial a title, upload a cover image, and list the supplies needed.</p></li>
+    <li><p>Follow the directions and click "Add Steps" when you are ready.</p></li>
+    <li><p>Add up to 10 steps, and don't forget to include some awesome photos!</p></li>
+    
+    <div class="create-btn">
+      <%= link_to "CREATE", new_tutorial_path(current_user) %> |
+      <%= link_to "HOME", root_path %>
+    </div>
+  </ol>
+<% else %>
+  <ol>
+    <li><p>Click the "SIGN UP" button and register for an account.</p></li>
+    <li><p>Once you are logged in, you can create a new tutorial.</p></li>
+    <li><p>Add up to 10 steps, and don't forget to include some awesome photos!</p></li>
+    
+    <div class="create-btn">
+      <%= link_to "HOME", root_path %>
+    </div>
+  </ol>
+<% end %>

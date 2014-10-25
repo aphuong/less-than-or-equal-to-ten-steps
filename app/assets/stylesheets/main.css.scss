@@ -21,6 +21,10 @@ h4 {
   font-weight: lighter;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .wrapper {
   width: 85%;
   padding-top: 20px;
@@ -47,7 +51,8 @@ h4 {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(30, 20, 10, 0.5);
+  z-index: 1;
+  background: rgba(12, 13, 13, 0.67);
 }
 
 .image {

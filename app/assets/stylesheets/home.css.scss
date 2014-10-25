@@ -15,6 +15,10 @@
   display: inline-block;
   text-align: right;
   width: 44%;
+
+  :hover {
+    color: $hover;
+  }
 }
 
 .category-name {

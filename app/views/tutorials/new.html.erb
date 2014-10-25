@@ -6,12 +6,12 @@
 
       <div class="form-group">
         <%= f.label :title, "Give Your Tutorial A Title" %>
-        <%= f.text_field :title, class: "form-control", autofocus: true, placeholder: "How to...", required: true%>
+        <%= f.text_field :title, :maxlength => 40, class: "form-control", autofocus: true, placeholder: "How to...", required: true%>
       </div>
       
       <div class="form-group">
         <%= f.label :supplies, "What Supplies Are Needed?" %>
-        <%= f.text_area :supplies, class: "text-area-control", placeholder: "Example: crayons, paper, ruler", required: true%>
+        <%= f.text_area :supplies, :maxlength => 200, class: "text-area-control", placeholder: "Example: crayons, paper, ruler", required: true%>
       </div>
 
       <div class="form-group">
@@ -24,7 +24,7 @@
         <%= f.select :category_id, category_options %>
       </div>
     
-      <p>Ready To Add Steps?</p> <%= f.submit class: "submit-btn" %>
+      <p>Ready To Add Steps?</p> <%= f.submit "CREATE TUTORIAL", class: "submit-btn" %>
 
   <% end %>
 </div>

@@ -24,13 +24,17 @@
           <strong>Step <%= i + 1 %>.</strong>
           <p><%= step.body %></p>
         </div>
-        
-        <div class="step-image">
-          <% if step.step_image.exists? %>
+
+        <% if step.step_image.exists? %>
+          <div class="step-image">
             <%= image_tag step.step_image (:medium) %>
-          <% end %>
-        </div>   
-       
+          </div> 
+        <% else %>
+          <div class="step-image invisible">
+            <%= image_tag step.step_image (:medium) %>
+          </div>   
+        <% end %>
+   
       <% end %>
     </div>
   </div>  

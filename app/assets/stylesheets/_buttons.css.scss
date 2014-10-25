@@ -3,35 +3,36 @@
   text-align: center;
 }
 
-#sign-up-btn, #sign-in-btn {
-  text-decoration: none;
-  font-size: $small;
-}
-
-.submit-btn {
-  font-size: 16px;
-  background: #CBBDB8;
-  font-family: Helvetica;
-  border: none;
-  /*vertical-align: bottom;*/
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 4px;
-  margin-bottom: 12px;
-}
-
 .search-btn {
   display: none;
 }
 
-.create-btn {
+.create-btn,
+.submit-btn {
   width: 22%;
   padding: 2%;
+  border: none;
+  margin-bottom: 5%;
   border-radius: 4px;
   background-color: $secondary-color;
   text-align: center;
 
   a {
     margin: 8%;
+
+    &:hover {
+      color: $hover;
+    }
+  }
+
+}
+
+.submit-btn {
+  background-color: $teriary-color;
+  font-family: $font-alternate;
+  font-size: $small;
+
+  &:hover {
+    color: $hover;
   }
 }

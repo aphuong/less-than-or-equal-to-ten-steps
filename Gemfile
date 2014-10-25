@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'bourbon'
 gem 'paperclip'
+gem 'gravtastic'
 gem 'pry-rails'
 gem 'bcrypt-ruby', '~> 3.1.5', require: "bcrypt"
 

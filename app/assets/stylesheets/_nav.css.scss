@@ -1,5 +1,5 @@
 nav {
-  width: 66%;
+  width: 88%;
   display: inline-block;
   text-align: right;
   font-family: $font-alternate;
@@ -13,6 +13,10 @@ nav {
   li {
     padding-right: 3%;
     border-right: $light;
+
+    :hover {
+      color: $hover;
+    }
   }
 }
 
@@ -20,6 +24,10 @@ nav {
   font-family: $font-fancy;
   font-size: 25px;
   display: inline-block;
+
+  :hover {
+    color: $hover;
+  }
 
   a {
     color: $primary-color;

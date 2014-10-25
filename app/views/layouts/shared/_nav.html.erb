@@ -1,7 +1,7 @@
 <% if current_user %>
 
   <header class="wrapper">
-    <div class="logo"><%= link_to "less than or equal to 10 steps", root_path %></div>
+    <div class="logo"><%= link_to "<= 10 steps", root_path %></div>
 
     <nav>
       <ul>
@@ -14,10 +14,15 @@
     </nav>
   </header>
 
+  <div class="sub-title">
+    <div class="left-title">Discover and Share New Skills.</div>
+    <div class="right-title"><%= link_to "Learn more.", about_path %></div>
+  </div>
+
 <% else %>
 
   <header class="wrapper">
-    <div class="logo"><%= link_to "less than or equal to 10 steps", root_path %></div>
+    <div class="logo"><%= link_to "<= 10 steps", root_path %></div>
     
     <nav>
       <ul>
@@ -37,7 +42,8 @@
 
   <div class="sub-title">
     <div class="left-title">Discover and Share New Skills.</div>
-    <div class="right-title">Learn more.</div>
+    <div class="right-title"><%= link_to "Learn more.", about_path %></div>
+    <p><%= flash[:alert] if flash[:alert] %></p>
   </div>
 
   

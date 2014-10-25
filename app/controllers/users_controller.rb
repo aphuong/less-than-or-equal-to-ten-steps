@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       # flash[:notice] = "Welcome, #{@user.fname}!"
       redirect_to @user
     else
-      # flash[:alert] = "Sorry, something went wrong. Please try again."
+      flash[:alert] = "Sorry, something went wrong. Please try again."
       redirect_to :root
     end
   end

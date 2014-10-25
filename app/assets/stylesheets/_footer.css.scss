@@ -4,4 +4,9 @@ footer {
 
 .social {
   margin: 10px 15px;
+  font-size: $medium;
+
+  :hover {
+    color: $hover;
+  }
 }

@@ -1,6 +1,11 @@
 <div class="full-background">
   <div class="container">
-  <h3>Hello <%= @user.fname %></h3>
+
+    <div class="profile">
+      <h3><%= @user.fname %></h3>
+      <%= image_tag @user.gravatar_url(default: "wavatar", :size => 150 ) %>
+    </div>
+  
 
     <% if @user.tutorials.any? %>  
 
@@ -19,6 +24,7 @@
     <% else %>
       <%= render partial: 'layouts/shared/instructions' %>
     <% end %>
+
   </div>
 </div>
 

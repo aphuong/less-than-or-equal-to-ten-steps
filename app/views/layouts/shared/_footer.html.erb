@@ -1,53 +1,23 @@
-<% if current_user %>
+<header class="wrapper">
+  <div class="logo">
+    <%= link_to "<= 10 steps", root_path %>
+  </div>
 
-  <header class="wrapper">
+  <nav>
+    <ul>
+      <li><%= link_to "HELP", help_path %></li>
+      <li><%= link_to "ABOUT", about_path %></li>
+      <li><a href="mailto:aphuong85@gmail.com?" target="_top">CONTACT US</a></li>
+      <li><%= render 'layouts/shared/search' %></li>
+    </ul>
+  </nav>
 
-    <div class="logo">
-      <%= link_to "less than or equal to 10 steps", root_path %>
-      <div class="social">
-        <a href="#" class="social"><i class="fa fa-facebook"></i></a>
-        <a href="#" class="social"><i class="fa fa-twitter"></i></a>
-        <a href="#" class="social"><i class="fa fa-instagram"></i></a>
-      </div>
-    </div>
-  
-    <nav>
-      <ul>
-        <li><%= link_to "HOME", root_path %></li>
-        <li><%= link_to "HELP", help_path %></li>
-        <li><%= link_to "ABOUT", about_path %></li>
-        <li><a href="mailto:aphuong85@gmail.com?" target="_top">CONTACT US</a></li>
-        <li><%= render 'layouts/shared/search' %></li>
-      </ul>
-    </nav>
+  <div class="social">
+    <a href="#" class="social"><i class="fa fa-facebook"></i></a>
+    <a href="#" class="social"><i class="fa fa-twitter"></i></a>
+    <a href="#" class="social"><i class="fa fa-instagram"></i></a>
+    <a href="#" class="social"><i class="fa fa-pinterest"></i></a>
+  </div>
 
   <p class="copyright">&copy; 2014 APL</p>
-  </header>
-
-<% else %>
-
-  <header class="wrapper">
-    <div class="logo">
-      <%= link_to "less than or equal to 10 steps", root_path %>
-      <div class="social">
-        <a href="#" class="social"><i class="fa fa-facebook"></i></a>
-        <a href="#" class="social"><i class="fa fa-twitter"></i></a>
-        <a href="#" class="social"><i class="fa fa-instagram"></i></a>
-        <a href="#" class="social"><i class="fa fa-pinterest"></i></a>
-      </div>
-    </div>
-
-    <nav>
-      <ul>
-        <li><%= link_to "HOME", root_path %></li> 
-        <li><%= link_to "HELP", help_path %></li>
-        <li><%= link_to "ABOUT", about_path %></li>
-        <li><a href="mailto:aphuong85@gmail.com?" target="_top">CONTACT US</a></li>
-        <li><%= render 'layouts/shared/search' %></li>
-      </ul>
-    </nav>
-
-  <p class="copyright">&copy; 2014 APL</p>
-  </header>
-
-<% end %>
+</header>

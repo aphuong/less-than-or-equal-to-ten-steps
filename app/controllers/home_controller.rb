@@ -8,5 +8,10 @@ class HomeController < ApplicationController
   def about
     @user = User.new
   end
+
+  def help
+    @user = User.new
+  end
+
   
 end
