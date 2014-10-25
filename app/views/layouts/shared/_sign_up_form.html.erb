@@ -1,0 +1,23 @@
+<%= form_for @user, html: { id: "sign-up-form" } do |f| %>
+
+  <% if @user.errors.any? %>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <l1><%= message %></l1>
+      <%end%>
+    </ul>
+  <%end%>
+
+  <%= f.text_field :fname, class: "form-control", autofocus: true, placeholder: "First Name", required: true %>
+
+  <%= f.text_field :lname, class: "form-control", autofocus: true, placeholder: "Last Name", required: true %>
+
+  <%= f.text_field :email, class: "form-control",  autofocus: true, placeholder: "Email", required: true %>
+
+  <%= f.password_field :password, class: "form-control",  autofocus: true, placeholder: "Password", required: true %>
+
+  <%= f.password_field :password_confirmation,  class: "form-control", placeholder: "Confirm Password" %>
+
+  <div class="btn-wrapper"><%= f.submit "Join Now", class: "submit-btn", id: "sign-up-btn" %></div>
+
+<% end %>

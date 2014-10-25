@@ -1,0 +1,19 @@
+<div class="wrapper">  
+  <div class="categories-layout">
+    <% @categories.each do |category| %>
+      
+      <div class="category-block">
+
+        <%= link_to categorized_tutorials_path(category) do %>
+          <div class="cat-container"><%= image_tag category.image_url, :class => "cat-image" %></div>
+        <% end %>
+        
+        <div class="category-name">
+          <%= link_to category.name, categorized_tutorials_path(category) %>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+</div>
+

@@ -1,0 +1,28 @@
+<div class="wrapper">
+
+  <% if @tutorials.any? %>
+    <h1>Search Result:</h1>
+
+    <% @tutorials.each do |t| %>
+      
+      <div class="tutorials-container">
+        <h1><%= t.title %></h1>
+
+        <div class="tutorial-main-image">
+          <%= image_tag t.main_image (:medium) %>
+        </div>
+
+        <div class="tutorial-text">
+          <p><strong>Shared by:</strong> <%= t.user.fname %></p>
+
+          <p><strong>Supplies Needed:</strong> <%= t.supplies %></p>
+
+          <p>#<%= t.category.name %></p>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+      <h1>Looks like there are no tutorial titles containing that keyword.</h1>
+      <%= link_to "Click here to explore all tutorials!", tutorials_path %>
+  <% end %>
+</div>

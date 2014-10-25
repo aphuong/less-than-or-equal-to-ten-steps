@@ -1,0 +1,20 @@
+<div class="wrapper">
+
+  <h1>List of all tutorials</h1>
+
+  <% @tutorials.each do |tutorial| %>
+    <div class="tutorials-container">
+
+      <div>
+        <% if tutorial.main_image.exists? %>
+          <%= image_tag tutorial.main_image (:medium) %>
+        <% end %>
+      </div>
+
+      <div>
+        <%= tutorial.title %>
+      </div>
+
+    </div>
+  <% end %>
+</div>

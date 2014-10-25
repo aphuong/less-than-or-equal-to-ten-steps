@@ -1,0 +1,37 @@
+<div class="full-background"> 
+  <div class="wrapper">
+    <div class="tutorial-wrapper">
+      <h1><%= @tutorial.title %></h1>
+
+      <div class="tutorial-main-image">
+        <%= image_tag @tutorial.main_image (:medium) %>
+      </div>
+
+      <div class="tutorial-text">
+        <p><strong>Shared by:</strong> <%= @tutorial.user.fname %></p>
+
+        <p><strong>Supplies Needed:</strong></p>
+        <p class="supplies"><%= @tutorial.supplies %></p>
+
+        <p>#<%= @tutorial.category.name %></p>
+      </div>
+    </div>
+
+    <div class="step-wrapper">
+      <% @tutorial.steps.each_with_index do |step, i| %>
+
+        <div class="step-text">
+          <strong>Step <%= i + 1 %>.</strong>
+          <p><%= step.body %></p>
+        </div>
+        
+        <div class="step-image">
+          <% if step.step_image.exists? %>
+            <%= image_tag step.step_image (:medium) %>
+          <% end %>
+        </div>   
+       
+      <% end %>
+    </div>
+  </div>  
+</div>

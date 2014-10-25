@@ -1,0 +1,51 @@
+<div class="container">
+    
+  <h3>Hello <%= @user.fname %></h3>
+  
+  <div class="flexslider">
+    <ul class="slides">
+      <li>
+        <%= image_tag "15.jpg" %>
+        <p>one</p>
+      </li>
+      <li>
+        <%= image_tag "4.jpg" %>
+        <p>two</p>
+      </li>
+      <li>
+        <%= image_tag "5.jpg" %>
+        <p>three</p>
+      </li>
+      <li>
+        <%= image_tag "4.jpg" %>
+        <p>four</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="full-background">
+  <div class="container">
+
+    <% @user.tutorials.each do |tutorial| %>
+      <div class="tutorials-container">
+
+        <div>
+          <%= link_to show_tutorials_path(tutorial) do %>
+            <%= image_tag tutorial.main_image (:medium), :class => "image" %>
+          <% end %>
+        </div>
+
+        <div>
+          <%= link_to tutorial.title, show_tutorials_path(tutorial) %>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+  
+  
+

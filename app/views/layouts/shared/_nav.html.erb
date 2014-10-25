@@ -1,0 +1,45 @@
+<% if current_user %>
+
+  <header class="wrapper">
+    <div class="logo"><%= link_to "less than or equal to 10 steps", root_path %></div>
+
+    <nav>
+      <ul>
+        <li><%= link_to "HOME", root_path %></li> 
+        <li><%= link_to "PROFILE", user_path(current_user) %></li>
+        <li><%= link_to "CREATE", new_tutorial_path(current_user) %></li>
+        <li><%= link_to "SIGN OUT", logout_path, method: :delete %></li>
+        <li><%= render 'layouts/shared/search' %></li>
+      </ul>
+    </nav>
+  </header>
+
+<% else %>
+
+  <header class="wrapper">
+    <div class="logo"><%= link_to "less than or equal to 10 steps", root_path %></div>
+    
+    <nav>
+      <ul>
+        <li><a id="sign-up-btn" href="#">SIGN UP</a></li>
+        <li><a id="sign-in-btn" href="#">SIGN IN</a></li>
+        <li><%= render 'layouts/shared/search' %></li>
+      </ul>
+    </nav>
+
+    <section>
+      <div class="shim"></div>
+      <div class="form-wrapper"><%= render 'layouts/shared/sign_in_form' %></div>
+      <div class="form-wrapper"><%= render partial: 'layouts/shared/sign_up_form' %></div>
+    </section>
+    
+  </header>
+
+  <div class="sub-title">
+    <div class="left-title">Discover and Share New Skills.</div>
+    <div class="right-title">Learn more.</div>
+  </div>
+
+  
+  
+<% end %>

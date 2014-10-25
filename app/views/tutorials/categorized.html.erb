@@ -1,0 +1,25 @@
+<div class="full-background">
+  <div class="container">
+
+    <h1>
+      <%= @category.name %> Tutorials:
+    </h1>
+
+    <% @category.tutorials.each do |t| %>
+      <div class="tutorials-container">
+        <div>
+          <%= link_to show_tutorials_path(t) do %>
+            <% if t.main_image.exists? %>
+              <%= image_tag t.main_image (:medium) %>
+            <% end %>
+          <% end %>
+        </div>
+        <div>
+          <%= link_to t.title, show_tutorials_path(t) %>
+          <p>submitted by: <%= t.user.fname %></p>
+        </div>
+      </div>
+    <% end %>
+    
+  </div>
+</div>

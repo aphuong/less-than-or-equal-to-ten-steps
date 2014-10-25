@@ -1,0 +1,25 @@
+.btn-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+#sign-up-btn, #sign-in-btn {
+  text-decoration: none;
+  font-size: $small;
+}
+
+.submit-btn {
+  font-size: 16px;
+  background: #CBBDB8;
+  font-family: Helvetica;
+  border: none;
+  /*vertical-align: bottom;*/
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.search-btn {
+  display: none;
+}

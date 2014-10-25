@@ -1,0 +1,30 @@
+nav {
+  width: 66%;
+  display: inline-block;
+  text-align: right;
+
+  ul li {
+    list-style: none;
+    display: inline-block;
+    font-size: $small;
+  }
+
+  li {
+    padding-right: 3%;
+    border-right: $light;
+  }
+}
+
+.logo {
+  font-family: $font-fancy;
+  font-size: 25px;
+  display: inline-block;
+
+  a {
+    color: $primary-color;
+  }
+}
+
+.search-form {
+  border: none;
+}

@@ -1,0 +1,30 @@
+<div class="wrapper background">
+  
+  <%= form_for @tutorial, html: { id: "tutorial-form" } do |f| %>
+
+    <h4 class="form-title">Share your skills. Create a tutorial.</h4>
+
+      <div class="form-group">
+        <%= f.label :title, "Give Your Tutorial A Title" %>
+        <%= f.text_field :title, class: "form-control", autofocus: true, placeholder: "How to...", required: true%>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :supplies, "What Supplies Are Needed?" %>
+        <%= f.text_area :supplies, class: "text-area-control", placeholder: "Example: crayons, paper, ruler", required: true%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :main_image, "Upload A Cover Photo" %>
+        <%= f.file_field :main_image, class: "form-image", required: true %>
+      </div>
+
+      <div class="form-category-select">
+        <%= f.label :category_id, "Select The Category Your Tutorial Belongs To: " %>
+        <%= f.select :category_id, category_options %>
+      </div>
+    
+      <p>Ready To Add Steps?</p> <%= f.submit class: "submit-btn" %>
+
+  <% end %>
+</div>

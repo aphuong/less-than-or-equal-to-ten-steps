@@ -1,0 +1,8 @@
+<%= form_tag("/tutorials/search", method: "get") do %>
+
+  <i class="fa fa-search"></i>
+
+  <%= text_field_tag(:query, nil, autofocus: false, placeholder: "SEARCH", class: "search-form") %>
+  <%= submit_tag("Search", class: "search-btn") %>
+
+<% end %>
