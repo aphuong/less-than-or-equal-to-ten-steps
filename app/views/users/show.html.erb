@@ -1,9 +1,14 @@
 <div class="full-background">
   <div class="container">
 
-    <div class="profile">
-      <h3><%= @user.fname %></h3>
+    <div class="profile-left">
+      <h3>Hello: <%= @user.fname %></h3>
       <%= image_tag @user.gravatar_url(default: "wavatar", :size => 150 ) %>
+      <p>Edit your profile image at <a href="https://en.gravatar.com/" target="_blank">Gravatar.com</a>.</p>
+    </div>
+
+    <div class="profile-right">
+      <p>what goes here?</p>
     </div>
   
 

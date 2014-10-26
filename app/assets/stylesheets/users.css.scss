@@ -1,4 +1,7 @@
-.profile {
-  width: 50%;
+.profile-left, .profile-right {
+  width: 49%;
   background-color: tomato;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 auto;
 }

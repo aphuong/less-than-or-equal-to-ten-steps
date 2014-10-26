@@ -1,5 +1,8 @@
-<div class="full-background"> 
-  <div class="wrapper">
+<div class="full-background tutorial-background"> 
+
+
+
+  <div class="column left">
     <div class="tutorial-wrapper">
       <h1><%= @tutorial.title %></h1>
 
@@ -16,26 +19,33 @@
         <p>#<%= @tutorial.category.name %></p>
       </div>
     </div>
+  </div>
 
-    <div class="step-wrapper">
+      
+
+  <div class="column right">
       <% @tutorial.steps.each_with_index do |step, i| %>
+        <div class="step-wrapper">
 
-        <div class="step-text">
-          <strong>Step <%= i + 1 %>.</strong>
-          <p><%= step.body %></p>
+          <div class="step-text">
+            <strong>Step <%= i + 1 %>.</strong>
+            <p><%= step.body %></p>
+          </div>
+
+          <% if step.step_image.exists? %>
+            <div class="step-image">
+              <%= image_tag step.step_image (:medium) %>
+            </div> 
+          <% else %>
+            <div class="step-image invisible">
+              <%= image_tag step.step_image (:medium) %>
+            </div>   
+          <% end %>
+          
         </div>
-
-        <% if step.step_image.exists? %>
-          <div class="step-image">
-            <%= image_tag step.step_image (:medium) %>
-          </div> 
-        <% else %>
-          <div class="step-image invisible">
-            <%= image_tag step.step_image (:medium) %>
-          </div>   
-        <% end %>
-   
       <% end %>
-    </div>
-  </div>  
+  </div>
+
+
+  
 </div>

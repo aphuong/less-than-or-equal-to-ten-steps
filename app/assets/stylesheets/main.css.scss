@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: $font-stack;
   font-weight: lighter;
@@ -12,7 +16,7 @@ a {
 
 h1 {
   font-weight: lighter;
-  font-size: 30px;
+  font-size: $large;
   font-weight: lighter;
   padding: 10px;
 }
@@ -21,13 +25,17 @@ h4 {
   font-weight: lighter;
 }
 
+img, .image {
+  width: 100%;
+}
+
 .invisible {
   visibility: hidden;
 }
 
 .wrapper {
   width: 85%;
-  padding-top: 20px;
+  padding-top: 2%;
   margin: 0 auto;
   text-align: center;
 }
@@ -55,9 +63,6 @@ h4 {
   background: rgba(12, 13, 13, 0.67);
 }
 
-.image {
-  width: 100%;
-}
 
 .background {
   background-color: $teriary-color;

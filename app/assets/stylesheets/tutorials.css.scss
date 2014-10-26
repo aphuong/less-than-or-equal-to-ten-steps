@@ -7,10 +7,14 @@
   margin-bottom: 30px;
 }
 
+.tutorial-background {
+  padding: 10px 50px 0 50px;
+}
+
 .tutorial-wrapper {
   background: #FFF;
   border-radius: 4px;
-  width: 33%;
+  width: 100%;
   text-align: center;
   vertical-align: top;
   display: inline-block;
@@ -19,14 +23,18 @@
 
 .tutorials-container {
   background: #FFF;
-  margin-bottom: 30px;
+  margin-bottom: 3%;
   border-radius: 4px;
-  padding: 5px;
-  width: 32%;
+  padding: 10px;
+  // width: 32%;
   text-align: center;
   vertical-align: top;
   display: inline-block;
   box-shadow: 0 4px 2px -2px rgba(100, 100, 100, 0.4);
+
+  img {
+    width: 100%;
+  }
 }
 
 .tutorial-text, .supplies {
@@ -40,33 +48,34 @@
 }
 
 .step-wrapper {
-  width: 65%;
-  margin-left: 17px;
-  text-align: center;
-  display: inline-block;
-  vertical-align: top;
-  border-radius: 4px;
+  margin-bottom: 10px;
+  // width: 65%;
+  // margin-left: 17px;
+  // text-align: center;
+  // display: inline-block;
+  // vertical-align: top;
+  // border-radius: 4px;
   // box-shadow: 0 4px 2px -2px rgba(100, 100, 100, 0.4);
 }
 
 .step-text {
   text-align: left;
-  margin-right: 10px;
+  // margin-right: 10px;
 }
 
 .step-text p {
-  padding: 0px 15px;
+  // padding: 0px 15px;
   line-height: 25px;
   text-align: left;
 }
 
 .step-text, .step-image {
-  width: 45%;
+  width: 49%;
   height: 300px;
   display: inline-block;
   vertical-align: top;
   padding: 10px;
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
   background: #FFF;
   border-radius: 4px;
   box-shadow: 0 4px 2px -2px rgba(100, 100, 100, 0.4);
@@ -75,7 +84,7 @@
 .steps-wrapper {
   background: #FFF;
   border: 1px solid #fff;
-  padding: 10px;
+  // padding: 10px;
   border-radius: 4px;
   box-shadow: 0 4px 2px -2px rgba(100, 100, 100, 0.4);
 }
@@ -97,4 +106,23 @@
   display: inline-block;
 }
 
+.show-container {
+  width: 100%;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.column {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.column.left {
+  width: 29%;
+}
+
+.column.right {
+  padding-left: 30px;
+  width: 69%;
+}
 
