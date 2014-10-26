@@ -1,7 +1,45 @@
-.profile-left, .profile-right {
-  width: 49%;
-  background-color: tomato;
+.profile-container {
+  width: 100%;
+  text-align: center;
+  padding: 10px 50px 0 50px;
+
+  .left {
+    background-color: $secondary-color;
+    border-radius: 4px;
+
+    a:hover {
+      color: $hover;
+    }
+  }
+
+  .column.right {
+    width: 57%;
+  }
+
+  .right {
+    text-align: left;
+  }
+}
+
+.profile-left {
+  width: 45%;
+  display: inline-block;
+  margin-bottom: 2%;
+
+  img {
+    border-radius: 4px;
+  }
+}
+
+.profile-right {
+  width: 47%;
   display: inline-block;
   vertical-align: top;
-  margin: 0 auto;
+  font-size: $small;
+  text-align: left;
+}
+
+.user-name {
+  text-align: left;
+  font-size: $medium;
 }

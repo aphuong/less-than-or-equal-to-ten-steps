@@ -1,32 +1,34 @@
 <div class="full-background">
-  <div class="container">
+  <div class="search-container">
 
-    <% if @tutorials.any? %>
-      <h1>Search Result:</h1>
+      <% if @tutorials.any? %>
+        <h1>Search Result:</h1>
 
-      <% @tutorials.each do |t| %>
-        
-        <div class="tutorials-container">
+        <% @tutorials.each do |t| %>
 
-          <div>
-          <%= link_to show_tutorials_path(t) do %>
-            <%= image_tag t.main_image (:medium) %>
-          <% end %>
+          <div class="tutorials-container">
+
+            <div>
+            <%= link_to show_tutorials_path(t) do %>
+              <%= image_tag t.main_image (:medium) %>
+            <% end %>
+            </div>
+
+             <div>
+              <%= link_to t.title, show_tutorials_path(t) %>
+              <p>submitted by: <%= t.user.fname %></p>
+            </div>
+
           </div>
 
-           <div>
-            <%= link_to t.title, show_tutorials_path(t) %>
-            <p>submitted by: <%= t.user.fname %></p>
-          </div>
-
-        </div>
-
+        <% end %>
+      <% else %>
+          <p>Looks like there are no tutorial titles containing that keyword.</p>
+          <%= link_to "Click here to explore all.", tutorials_path, class: "create-btn"%>
       <% end %>
-    <% else %>
-        <h1>Looks like there are no tutorial titles containing that keyword.</h1>
-        <%= link_to "Click here to explore all tutorials!", tutorials_path %>
-    <% end %>
+
   </div>
+
 </div>
 
 

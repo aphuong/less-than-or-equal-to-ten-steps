@@ -1,4 +1,5 @@
-<h3>Need some inspiration? Click "HOME" to browse categories and tutorials.</h3>
+<h3>Need some inspiration?</h3>
+<h3>Click "HOME" to browse categories and tutorials.</h3>
 <h3>If you have a tutorial that is less than or equal to 10 steps:</h3>
 <p>Here's how you can get started</p>
 
@@ -10,9 +11,13 @@
     <li><p>Add up to 10 steps, and don't forget to include some awesome photos!</p></li>
     
     <div class="create-btn">
-      <%= link_to "CREATE", new_tutorial_path(current_user) %> |
+      <%= link_to "CREATE", new_tutorial_path(current_user) %>
+    </div>
+    
+    <div class="create-btn">
       <%= link_to "HOME", root_path %>
     </div>
+
   </ol>
 <% else %>
   <ol>

@@ -7,12 +7,14 @@
 
       <div>
         <% if tutorial.main_image.exists? %>
-          <%= image_tag tutorial.main_image (:medium) %>
+          <%= link_to show_tutorials_path(tutorial) do %>
+            <%= image_tag tutorial.main_image (:medium) %>
+            <div>
+              <%= tutorial.title %>
+              <p>submitted by: <%= tutorial.user.fname %></p>
+            </div>
+          <% end %>
         <% end %>
-      </div>
-
-      <div>
-        <%= tutorial.title %>
       </div>
 
     </div>

@@ -118,11 +118,26 @@
 }
 
 .column.left {
-  width: 29%;
+  width: 33%;
+  padding-left: 2%;
 }
 
 .column.right {
-  padding-left: 30px;
-  width: 69%;
+  padding-left: 2%;
+  width: 66%;
 }
+
+// search page
+
+.search-container,
+.categorized-container {
+  text-align: center;
+}
+
+.search-container p {
+  font-size: $medium;
+  padding-top: 2%;
+}
+
+
 
