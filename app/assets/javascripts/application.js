@@ -11,11 +11,14 @@
 // about supported directives.
 //
 //= require jquery
+//= require best_in_place
 //= require jquery_ujs
 //= require jquery.flexslider
 //= require_tree .
 
 $(document).ready(function(){
+
+  $(".best_in_place").best_in_place();
 
   $('.flexslider').flexslider({
     animation: "slide",

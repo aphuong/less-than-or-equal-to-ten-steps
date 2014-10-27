@@ -2,20 +2,41 @@
 
   <div class="column left">
     <div class="tutorial-wrapper">
-      <h1><%= @tutorial.title %></h1>
 
-      <div class="tutorial-main-image">
-        <%= image_tag @tutorial.main_image (:medium) %>
-      </div>
+      <% if current_user && current_user.id == @tutorial.user_id %>
+        <a href="#" class="edit-btn">EDIT</a>
+        <h1><%= best_in_place @tutorial, :title, as: :input, url: edit_tutorial_path(@tutorial) %></h1>
+        
+        <div class="tutorial-main-image">
+          <%= image_tag @tutorial.main_image (:medium) %>
+        </div>
 
-      <div class="tutorial-text">
-        <p><strong>Shared by:</strong> <%= @tutorial.user.fname %></p>
+        <div class="tutorial-text">
+          <p><strong>Shared by:</strong> <%= @tutorial.user.fname %></p>
 
-        <p><strong>Supplies Needed:</strong></p>
-        <p class="supplies"><%= @tutorial.supplies %></p>
+          <p><strong>Supplies Needed:</strong></p>
+          <p class="supplies"><%= best_in_place @tutorial, :supplies, as: :textarea, url: edit_tutorial_path(@tutorial) %></p>
 
-        <p>#<%= @tutorial.category.name %></p>
-      </div>
+          <p>#<%= @tutorial.category.name %></p>
+        </div>
+
+      <% else %>
+        <h1> <%= @tutorial.title %> </h1>
+
+        <div class="tutorial-main-image">
+          <%= image_tag @tutorial.main_image (:medium) %>
+        </div>
+
+        <div class="tutorial-text">
+          <p><strong>Shared by:</strong> <%= @tutorial.user.fname %></p>
+
+          <p><strong>Supplies Needed:</strong></p>
+          <p class="supplies"><%= @tutorial.supplies %></p>
+
+          <p>#<%= @tutorial.category.name %></p>
+        </div>
+
+      <% end %>
     </div>
   </div>
 
@@ -25,9 +46,14 @@
 
           <div class="step-text">
             <strong>Step <%= i + 1 %>.</strong>
-            <p><%= step.body %></p>
-          </div>
 
+            <% if current_user && current_user.id == @tutorial.user_id %>
+              <p><%= best_in_place step, :body, as: :textarea, url: edit_tutorial_step_path(@tutorial.id, step.id) %></p>
+            <% else %> 
+              <p><%= step.body %></p>
+            <% end %>
+          </div>
+        
           <% if step.step_image.exists? %>
             <div class="step-image">
               <%= image_tag step.step_image (:medium) %>

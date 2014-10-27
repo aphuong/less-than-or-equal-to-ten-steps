@@ -42,8 +42,9 @@ Rails.application.routes.draw do
   # this is where new steps post to
   post '/tutorials/:id/steps' => 'tutorials#create_step', as: :create_tutorial_step
 
-  # # lets users edit a tutorial
-  # get 'users/:id/tutorials/edit' => 'tutorials#edit'
+  # lets users edit a tutorial
+  put 'users/:id/tutorials/edit' => 'tutorials#update', as: :edit_tutorial
+  put 'tutorials/:tutorial_id/steps/:step_id/edit' => 'tutorials#update_step', as: :edit_tutorial_step
 
   # lets you follow users
   post '/follow' => 'users#follow', as: :follow_user

@@ -46,6 +46,27 @@ class TutorialsController < ApplicationController
     end
   end
 
+  def update
+    @tutorial = Tutorial.find(params[:id])
+    if @tutorial.update(tutorial_params)
+      respond_to do |format|
+        format.html { redirect_to @tutorial }
+        format.json { respond_with_bip(@tutorial) }
+      end
+    end
+  end
+
+  def update_step
+    @tutorial = Tutorial.find(params[:tutorial_id])
+    @step = Step.find(params[:step_id])
+    if @step.update(step_params)
+      respond_to do |format|
+        format.html { redirect_to @step }
+        format.json { respond_with_bip(@step) }
+      end
+    end
+  end
+
   def new_step
     @tutorial = Tutorial.find(params[:id])
     @step = Step.new
