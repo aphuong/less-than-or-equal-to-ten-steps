@@ -2,27 +2,39 @@
   <div class="profile-container">
 
     <div class="column left">
-      <p class="user-name"><%= @user.fname %> <%= @user.lname %></p>
 
-      <div class="profile-left">
-        <%= image_tag @user.gravatar_url(default: "wavatar", :size => 150 ) %>
-        <span>Edit profile image<br />
-          <a href="https://en.gravatar.com/" target="_blank">@Gravatar.com</a>.
-        </span>
+      <div class="profile-wrapper">
+        <p class="user-name"><%= @user.fname %> <%= @user.lname %></p>
+        <div class="profile-left">
+          <%= image_tag @user.gravatar_url(default: "wavatar", :size => 150 ) %>
+          <span>Edit profile image at:<br />
+            <a href="https://en.gravatar.com/" target="_blank">Gravatar.com</a>.
+          </span>
+        </div>
+
+        <div class="profile-right">
+          <p>FRIENDS: </p>
+          <p>TUTORIALS: <%= @user.tutorials.count %></p>
+          <p>FOLLOW</p>
+        </div>
       </div>
 
-      <div class="profile-right">
-        <p>FRIENDS: </p>
-        <p>TUTORIALS: <%= @user.tutorials.count %></p>
-        <p>FOLLOW</p>
-      </div>
+      <div class="users-container">
+        <p>All Users</p>
+        <% @users.each do |user| %>
+          <div class="all-users">
+            <%= link_to user_path(user) do %>
+              <div><%= image_tag user.gravatar_url(default: "wavatar", :size => 150) %></div>
+              <div><%= user.fname %></div>
+            <% end %>
 
-      <ul>
-      <% @users.each do |user| %>
-        <li><%= user.fname %></li>
-      <% end %>
-      </ul>
+            <div>follow</div>
+
+          </div>
+        <% end %>
+      </div>
     </div>
+   
 
     <div class="column right">
 
