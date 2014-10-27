@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show, :follow, :unfollow]
 
   def show
     @users = User.all
@@ -17,6 +17,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def follow     
+    @rel = Relationship.new(follower_id: current_user.id, followed_id: @user.id)
+    @rel.save
+    redirect_to user_url(@user)
+  end
+
+  def unfollow
+    @rel = Relationship.where(followed_id: current_user.id, followed_id: @user.id).first
+    @rel.destroy
+    redirect_to user_url(@user)
+  end
 
   private
 

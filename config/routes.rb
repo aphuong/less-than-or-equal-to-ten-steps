@@ -45,6 +45,8 @@ Rails.application.routes.draw do
   # # lets users edit a tutorial
   # get 'users/:id/tutorials/edit' => 'tutorials#edit'
 
-
+  # lets you follow users
+  post '/follow' => 'users#follow', as: :follow_user
+  post '/unfollow' => 'users#unfollow', as: :unfollow_user
 
 end

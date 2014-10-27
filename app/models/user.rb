@@ -12,6 +12,11 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
   validates :password, uniqueness: true
 
+  has_many :relationships, foreign_key: :follower_id, dependent: :destroy
+  has_many :followeds, through: :relationships
+  has_many :reverse_relationships, foreign_key: :followed_id, class_name: "Relationship", dependent: :destroy
+  has_many :followers, through: :reverse_relationships, source: :follower
+
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt
     self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)

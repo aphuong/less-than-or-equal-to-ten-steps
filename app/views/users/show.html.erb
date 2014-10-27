@@ -13,9 +13,17 @@
         </div>
 
         <div class="profile-right">
-          <p>FRIENDS: </p>
+          <p>FRIENDS: <%= @user.followeds.count %></p>
+          <p>FOLLOWERS: <%= @user.followers.count %></p>
           <p>TUTORIALS: <%= @user.tutorials.count %></p>
-          <p>FOLLOW</p>
+
+          <% if current_user and @user != current_user %>
+            <% if current_user.followeds.include? @user %>
+              <%= link_to 'UNFOLLOW', unfollow_user_path(id: @user.id), method: :post, class: "follow" %>
+            <% else %>
+              <%= link_to 'FOLLOW', follow_user_path(id: @user.id), method: :post, class: "unfollow" %>
+            <% end %>
+          <% end %>
         </div>
       </div>
 
@@ -27,9 +35,6 @@
               <div><%= image_tag user.gravatar_url(default: "wavatar", :size => 150) %></div>
               <div><%= user.fname %></div>
             <% end %>
-
-            <div>follow</div>
-
           </div>
         <% end %>
       </div>
