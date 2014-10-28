@@ -7,6 +7,12 @@ gem 'best_in_place'
 gem 'pry-rails'
 gem 'bcrypt-ruby', '~> 3.1.5', require: "bcrypt"
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'database_cleaner'
+end
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
