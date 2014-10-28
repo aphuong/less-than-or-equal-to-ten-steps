@@ -4,7 +4,12 @@
     <div class="tutorial-wrapper">
 
       <% if current_user && current_user.id == @tutorial.user_id %>
-        <a href="#" class="edit-btn">EDIT</a>
+
+        <div class="edit-text">
+          <a href="#" class="edit-btn">EDIT</a>
+          <p>Click on your tutorial title, supplies or steps to make edits.</p>
+        </div>
+
         <h1><%= best_in_place @tutorial, :title, as: :input, url: edit_tutorial_path(@tutorial) %></h1>
         
         <div class="tutorial-main-image">
@@ -12,12 +17,13 @@
         </div>
 
         <div class="tutorial-text">
-          <p><strong>Shared by:</strong> <%= @tutorial.user.fname %></p>
+          <p><strong>Shared by:</strong> <%= link_to @tutorial.user.fname, user_path(@tutorial.user) %></p>
+          <p class="time">Created: <%= @tutorial.created_at.strftime("%m/%d/%Y at %I:%M%p") %></p>
 
           <p><strong>Supplies Needed:</strong></p>
           <p class="supplies"><%= best_in_place @tutorial, :supplies, as: :textarea, url: edit_tutorial_path(@tutorial) %></p>
 
-          <p>#<%= @tutorial.category.name %></p>
+          <p>#<%=link_to @tutorial.category.name, categorized_tutorials_path(@tutorial.category) %></p>
         </div>
 
       <% else %>
@@ -28,12 +34,12 @@
         </div>
 
         <div class="tutorial-text">
-          <p><strong>Shared by:</strong> <%= @tutorial.user.fname %></p>
+          <p><strong>Shared by:</strong> <%= link_to @tutorial.user.fname, user_path(@tutorial.user)%></p>
 
           <p><strong>Supplies Needed:</strong></p>
           <p class="supplies"><%= @tutorial.supplies %></p>
 
-          <p>#<%= @tutorial.category.name %></p>
+          <p>#<%= link_to @tutorial.category.name, categorized_tutorials_path(@tutorial.category) %></p>
         </div>
 
       <% end %>
@@ -49,6 +55,7 @@
 
             <% if current_user && current_user.id == @tutorial.user_id %>
               <p><%= best_in_place step, :body, as: :textarea, url: edit_tutorial_step_path(@tutorial.id, step.id) %></p>
+              <p class="time">Updated: <%= step.updated_at.strftime("%m/%d/%Y at %I:%M%p") %></p>
             <% else %> 
               <p><%= step.body %></p>
             <% end %>

@@ -49,6 +49,10 @@ $(document).ready(function(){
     $("body").animate({ scrollTop: 0 }, 200);
   });
 
+  $(".edit-btn").click(function(){
+    $(".edit-text p").fadeIn();
+  });
+
   // $(".category-name").hover(function(){
   //   $(this).animate({ bottom: "80px" }, 200);
   //   }, function(){
