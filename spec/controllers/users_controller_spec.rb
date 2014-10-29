@@ -19,10 +19,6 @@ RSpec.describe UsersController, :type => :controller do
     }
   }
 
-  let(:follower_id) {{ user_id: 1 }}
-  let(:followed_id) {{ user_id: 2 }}
-
-
   let(:valid_attributes2) {
     @valid_attributes2 = {
       fname: "Bob",
@@ -42,7 +38,6 @@ RSpec.describe UsersController, :type => :controller do
       expect(assigns(:users)).to eq([user])
     end
   end
-
 
   describe "POST create" do
     describe "with valid params" do
@@ -88,24 +83,44 @@ RSpec.describe UsersController, :type => :controller do
     end
 
     it "assigns the new relationship as @rel" do
+      current_user = User.create! (valid_attributes)
+      user2 = User.create! (valid_attributes2)
+      post :follow, {id: user2.to_param}, session_id
+      expect(assigns(:follow)).to be(@rel)
     end
 
     it "redirects to that user's path" do
+      current_user = User.create! (valid_attributes)
+      user2 = User.create! (valid_attributes2)
+      post :follow, {id: user2.to_param}, session_id
+      expect(response).to redirect_to(user2)
     end
   end
 
   describe "POST unfollow" do
     it "assigns a relationship as @rel" do 
+      current_user = User.create! (valid_attributes)
+      user2 = User.create! (valid_attributes2)
+      post :follow, {id: user2.to_param}, session_id
+      expect(assigns(:unfollow)).to be(@rel)
     end
 
     it "destroys the requested relationship" do
+      current_user = User.create! (valid_attributes)
+      user2 = User.create! (valid_attributes2)
+      post :follow, {id: user2.to_param}, session_id
+      expect {
+        post :unfollow, {id: user2.to_param}, session_id
+      }.to change(Relationship, :count).by(-1)
     end
 
     it "redirects to that user's path" do
+      current_user = User.create! (valid_attributes)
+      user2 = User.create! (valid_attributes2)
+      post :follow, {id: user2.to_param}, session_id
+      post :unfollow, {id: user2.to_param}, session_id
+      expect(response).to redirect_to(user2)
     end
   end
-
-
-
 end
 

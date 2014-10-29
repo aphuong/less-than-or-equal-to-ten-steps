@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def unfollow
-    @rel = Relationship.where(followed_id: current_user.id, followed_id: @user.id).first
+    @rel = Relationship.where(follower_id: current_user.id, followed_id: @user.id).first
     @rel.destroy
     redirect_to user_url(@user)
   end

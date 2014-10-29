@@ -1,25 +1,8 @@
 class TutorialsController < ApplicationController
 
-  def categorized
-    @user = User.new
-    @category = Category.find(params[:id])
-  end
-
   def index
     @user = User.new
     @tutorials = Tutorial.all
-  end
-
-  def search
-    @user = User.new
-    tutorials = Tutorial.all
-    @keyword = params[:query]
-
-    @tutorials = tutorials.select do |tut|
-      words = tut.title.downcase.split(' ')
-      words.include? @keyword.downcase
-    end
-
   end
 
   def show
@@ -85,6 +68,23 @@ class TutorialsController < ApplicationController
       flash[:alert] = "Sorry, something went wrong. Please try again."
       render @tutorial
     end
+  end
+
+  def categorized
+    @user = User.new
+    @category = Category.find(params[:id])
+  end
+
+  def search
+    @user = User.new
+    tutorials = Tutorial.all
+    @keyword = params[:query]
+
+    @tutorials = tutorials.select do |tut|
+      words = tut.title.downcase.split(' ')
+      words.include? @keyword.downcase
+    end
+
   end
 
   private
