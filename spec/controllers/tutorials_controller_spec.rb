@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe TutorialsController, :type => :controller do 
 
   let(:valid_t_attr) {
-    @valid_attributes = {
+    @valid_t_attr = {
       title: "How To Bake A Pie",
       user_id: 1,
       category_id: 1,
@@ -35,6 +35,7 @@ RSpec.describe TutorialsController, :type => :controller do
     end
   end
 
+
   describe "GET show" do
     it "assigns the requested tutorial as @tutorial" do
       tutorial = Tutorial.create! valid_t_attr
@@ -48,6 +49,7 @@ RSpec.describe TutorialsController, :type => :controller do
       expect(assigns(:user)).to be_a(User)
     end
   end
+
 
   describe "GET new" do
     it "instantiates a new tutorial as @tutorial" do
@@ -71,8 +73,70 @@ RSpec.describe TutorialsController, :type => :controller do
     end
   end
 
-  describe "GET create" do
-  
+
+  describe "POST create" do
+    it "creates a new tutorial" do
+      current_user = User.create! (valid_attributes)
+      tutorial = Tutorial.create! valid_t_attr
+      tutorial.user_id = current_user.id
+      expect {
+        post :create, {tutorial: valid_attributes}, session_id
+      }.to change(Tutorial, :count).by(1)
+    end
+
+    it "assigns a newly created tutorial as @tutorial" do
+      current_user = User.create! (valid_attributes)
+      tutorial = Tutorial.create! valid_t_attr
+      tutorial.user_id = current_user.id
+      post :create, {tutorial: valid_attributes}, session_id
+      expect(assigns(:tutorial)).to be_a(Tutorial)
+    end
+
+    it "redirects to the create step path" do
+      current_user = User.create! (valid_attributes)
+      tutorial = Tutorial.create! valid_t_attr
+      tutorial.user_id = current_user.id
+      post :create, {tutorial: valid_attributes}, session_id
+      expect(response).to redirect_to(new_tutorial_step_url(Tutorial.last.id))
+    end
+  end
+
+  describe "PUT update" do
+
+    let(:new_t_attributes) {
+      @new_t_attributes = {
+        title: "How To Bake A Cake",
+        user_id: 1,
+        category_id: 1,
+        supplies: "icing, sugar, flour"
+      }
+    }
+
+    it "updates the requested tutorial" do
+      current_user = User.create! (valid_attributes)
+      tutorial = Tutorial.create! valid_t_attr
+      tutorial.user_id = current_user.id
+      put :update, {id: tutorial.to_param, tutorial: new_t_attributes}, session_id
+      binding.pry
+      
+      tutorial.reload      
+      expect(tutorial.name).to eq("How To Bake A Cake")
+      expect(tutorial.supplies).to eq("icing, sugar, flour")
+    end
+
+    xit "assigns the requested tutorial as @ tutorial" do
+    end
+
+    xit "redirects to the tutorial" do
+    end
+
   end
 
 end
+
+
+
+
+
+
+
