@@ -1,16 +1,69 @@
-<div class="categories-layout">
-  <% @categories.each do |category| %>
-    
-    <div class="category-block">
+<section class="categories-layout">
 
-      <%= link_to categorized_tutorials_path(category) do %>
-        <div><%= image_tag category.image_url, :class => "cat-image" %></div>
+  <div class="row">
+    <div class="col col-7">
+      <%= link_to categorized_tutorials_path(@categories[0]) do %>
+        <%= image_tag @categories[0].image_url, :class => "cat-image" %>
       <% end %>
-
       <div class="category-name">
-        <%= link_to category.name, categorized_tutorials_path(category) %>
+        <%= link_to @categories[0].name, categorized_tutorials_path(@categories[0]) %>
       </div>
-
     </div>
-  <% end %>
-</div>
+    <div class="col col-5">
+      <%= link_to categorized_tutorials_path(@categories[1]) do %>
+        <%= image_tag @categories[1].image_url, :class => "cat-image" %>
+      <% end %>
+      <div class="category-name">
+        <%= link_to @categories[1].name, categorized_tutorials_path(@categories[1]) %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col-5">
+      <%= link_to categorized_tutorials_path(@categories[2]) do %>
+        <%= image_tag @categories[2].image_url, :class => "cat-image" %>
+      <% end %>
+      <div class="category-name">
+        <%= link_to @categories[2].name, categorized_tutorials_path(@categories[2]) %>
+      </div>
+    </div>
+    <div class="col col-7">
+      <%= link_to categorized_tutorials_path(@categories[3]) do %>
+        <%= image_tag @categories[3].image_url, :class => "cat-image" %>
+      <% end %>
+      <div class="category-name">
+        <%= link_to @categories[3].name, categorized_tutorials_path(@categories[3]) %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col-4">
+      <%= link_to categorized_tutorials_path(@categories[4]) do %>
+        <%= image_tag @categories[4].image_url, :class => "cat-image" %>
+      <% end %>
+      <div class="category-name">
+        <%= link_to @categories[4].name, categorized_tutorials_path(@categories[4]) %>
+      </div>
+    </div>
+
+    <div class="col col-4">
+      <%= link_to categorized_tutorials_path(@categories[5]) do %>
+        <%= image_tag @categories[5].image_url, :class => "cat-image" %>
+      <% end %>
+      <div class="category-name">
+        <%= link_to @categories[5].name, categorized_tutorials_path(@categories[5]) %>
+      </div>
+    </div>
+
+    <div class="col col-4">
+      <%= link_to categorized_tutorials_path(@categories[6]) do %>
+        <%= image_tag @categories[6].image_url, :class => "cat-image" %>
+      <% end %>
+      <div class="category-name">
+        <%= link_to @categories[6].name, categorized_tutorials_path(@categories[6]) %>
+      </div>
+    </div>
+  </div>
+</section>

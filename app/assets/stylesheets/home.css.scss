@@ -43,9 +43,8 @@
   text-align: center;
 }
 
-.category-block {
+.col {
   position: relative;
-  display: inline-block;
 
   &:hover {
     .category-name {
@@ -54,9 +53,9 @@
   }
 }
 
-.cat-image {
-  width: 100%;
-}
+// .cat-image {
+//   width: 100%;
+// }
 
 // about page
 
