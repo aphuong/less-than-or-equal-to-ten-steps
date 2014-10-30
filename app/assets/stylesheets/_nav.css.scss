@@ -11,11 +11,20 @@ nav {
   }
 
   li {
-    padding-right: 3%;
+    padding: 5px 10px;
     border-right: $light;
+    margin-left: -4px;
 
-    :hover {
-      color: $hover;
+    &:hover {
+      background-color: $hover;
+      border-radius: 4px;
+      -webkit-transition: background-color 500ms linear;
+      -moz-transition: background-color 500ms linear;
+      -o-transition: background-color 500ms linear;
+      -ms-transition: background-color 500ms linear;
+      transition: background-color 500ms linear;
+
+      a { color: #fff; }
     }
   }
 }

@@ -50,8 +50,17 @@ $(document).ready(function(){
   });
 
   $(".edit-btn").click(function(){
-    $(".edit-text p").fadeIn();
+    $(".edit-text p").toggle(300);
   });
+
+ 
+
+  // $(".edit-btn").hover(function() {
+  //   $(this).css("background-color", "#fff");
+  // }, function() {
+  //   $(this).css("background-color", "$hover");
+  // });
+
 
   // $(".category-name").hover(function(){
   //   $(this).animate({ bottom: "80px" }, 200);

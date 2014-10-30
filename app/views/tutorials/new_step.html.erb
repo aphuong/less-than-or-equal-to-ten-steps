@@ -1,6 +1,6 @@
 <div class="wrapper background">
 
-  <div class="tutorial-wrapper">
+  <div class="new-step-wrapper">
     <h1><%= @tutorial.title %></h1>
 
     <div class="tutorial-main-image">
@@ -8,9 +8,9 @@
     </div>
 
     <div class="tutorial-text">
-      <p><strong>Shared by:</strong><%= @tutorial.user.fname %></p>
+      <p><strong>Shared by: </strong><%= @tutorial.user.fname %></p>
 
-      <p><strong>Supplies Needed:</strong></p>
+      <p><strong>Supplies Needed: </strong></p>
       <p class="supplies"><%= @tutorial.supplies %></p>
 
       <p>#<%= @tutorial.category.name %></p>
@@ -36,7 +36,7 @@
         </div>
         
         <%= f.submit "ADD STEP", class: "submit-btn" %>
-        <%= link_to "FINISHED", show_tutorials_path(@tutorial), class: "submit-btn" %>
+        <%= link_to "FINISHED", show_tutorial_path(@tutorial), class: "submit-btn" %>
         <p>Current Step Count: 
           <span><%= @tutorial.steps.count %></span>
         </p>
@@ -60,7 +60,7 @@
     <div class="step-review-wrapper">
       <p>Looks like you exceeded the maximum number of steps allowed.</p>
       <p>Try creating a new post or edit an existing one.</p>
-      <%= link_to "VIEW TUTORIAL", show_tutorials_path(@tutorial), class: "submit-btn" %>
+      <%= link_to "VIEW TUTORIAL", show_tutorial_path(@tutorial), class: "submit-btn" %>
       <%= link_to "CREATE", new_tutorial_path(current_user), class: "submit-btn"  %>
     </div>
 

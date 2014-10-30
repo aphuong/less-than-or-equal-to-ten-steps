@@ -22,6 +22,12 @@ RSpec.describe TutorialsController, :type => :controller do
 
   let(:session_id) {{ user_id: 1 }}
 
+  let(:step_attributes) {
+    @step_attributes = {
+      body: "hello world"
+    }
+  }
+
   describe "GET index" do
     it "assigns all tutorials to @tutorials" do
       t = Tutorial.create! valid_t_attr
@@ -29,7 +35,7 @@ RSpec.describe TutorialsController, :type => :controller do
       expect(assigns(t)).to eq(@tutorials)
     end
 
-    it "instanciates a new user as @user" do
+    it "instantiates a new user as @user" do
       get :index
       expect(assigns(:user)).to be_a(User)
     end
@@ -117,26 +123,60 @@ RSpec.describe TutorialsController, :type => :controller do
       tutorial = Tutorial.create! valid_t_attr
       tutorial.user_id = current_user.id
       put :update, {id: tutorial.to_param, tutorial: new_t_attributes}, session_id
-      binding.pry
-      
-      tutorial.reload      
-      expect(tutorial.name).to eq("How To Bake A Cake")
+      tutorial.reload  
+      expect(tutorial.title).to eq("How To Bake A Cake")
       expect(tutorial.supplies).to eq("icing, sugar, flour")
     end
 
-    xit "assigns the requested tutorial as @ tutorial" do
+    it "assigns the requested tutorial as @ tutorial" do
+      current_user = User.create! (valid_attributes)
+      tutorial = Tutorial.create! valid_t_attr
+      tutorial.user_id = current_user.id
+      put :update, {id: tutorial.to_param, tutorial: new_t_attributes}, session_id
+      expect(assigns(:tutorial)).to be_a(Tutorial)
     end
 
-    xit "redirects to the tutorial" do
+    it "redirects to the tutorial" do
+      current_user = User.create! (valid_attributes)
+      tutorial = Tutorial.create! valid_t_attr
+      tutorial.user_id = current_user.id
+      put :update, {id: tutorial.to_param, tutorial: new_t_attributes}, session_id
+      expect(response).to redirect_to(show_tutorial_url(Tutorial.last.id))
     end
-
   end
 
+  describe "GET new_step" do
+    it "assigns a tutorial to @tutorial" do
+      current_user = User.create! (valid_attributes)
+      tutorial = Tutorial.create! valid_t_attr
+      tutorial.user_id = current_user.id
+      get :new_step, {id: tutorial.to_param}, session_id
+      expect(assigns(:tutorial)).to be_a(Tutorial)
+    end
+
+    it "instantiates a new step" do 
+      current_user = User.create! (valid_attributes)
+      tutorial = Tutorial.create! valid_t_attr
+      tutorial.user_id = current_user.id
+      get :new_step, {id: tutorial.to_param}, session_id
+      expect(assigns(:step)).to be_a(Step)
+    end
+  end
+
+  # describe "POST create_step" do
+  #   it "creates a new step" do
+  #     current_user = User.create! (valid_attributes)
+  #     tutorial = Tutorial.create! valid_t_attr
+  #     tutorial.user_id = current_user.id
+  #     step = Step.create! step_attributes
+     
+  #     expect {
+  #       post :create_step, {step: step_attributes}, session_id
+  #     }.to change(Step, :count).by(1)
+  #   end
+  # end
+
 end
-
-
-
-
 
 
 

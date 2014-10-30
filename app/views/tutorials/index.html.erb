@@ -7,7 +7,7 @@
 
       <div>
         <% if tutorial.main_image.exists? %>
-          <%= link_to show_tutorials_path(tutorial) do %>
+          <%= link_to show_tutorial_path(tutorial) do %>
             <%= image_tag tutorial.main_image (:medium) %>
             <div>
               <%= tutorial.title %>

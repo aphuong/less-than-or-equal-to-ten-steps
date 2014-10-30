@@ -33,19 +33,8 @@ class TutorialsController < ApplicationController
     @tutorial = Tutorial.find(params[:id])
     if @tutorial.update(tutorial_params)
       respond_to do |format|
-        format.html { redirect_to @tutorial }
+        format.html { redirect_to show_tutorial_path(@tutorial) }
         format.json { respond_with_bip(@tutorial) }
-      end
-    end
-  end
-
-  def update_step
-    @tutorial = Tutorial.find(params[:tutorial_id])
-    @step = Step.find(params[:step_id])
-    if @step.update(step_params)
-      respond_to do |format|
-        format.html { redirect_to @step }
-        format.json { respond_with_bip(@step) }
       end
     end
   end
@@ -67,6 +56,17 @@ class TutorialsController < ApplicationController
     else
       flash[:alert] = "Sorry, something went wrong. Please try again."
       render @tutorial
+    end
+  end
+
+  def update_step
+    @tutorial = Tutorial.find(params[:tutorial_id])
+    @step = Step.find(params[:step_id])
+    if @step.update(step_params)
+      respond_to do |format|
+        format.html { redirect_to @step }
+        format.json { respond_with_bip(@step) }
+      end
     end
   end
 

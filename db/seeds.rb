@@ -8,14 +8,14 @@ end
 
 user_2 = User.create do |u|
   u.fname = "Sam"
-  u.lname = "Phuong"
+  u.lname = "Burn"
   u.email = "sam@gmail.com"
   u.password = "sam"
 end
 
 user_3 = User.create do |u|
   u.fname = "Kylie"
-  u.lname = "Phuong"
+  u.lname = "Smith"
   u.email = "kylie@gmail.com"
   u.password = "kylie"
 end
@@ -29,42 +29,42 @@ end
 
 user_5 = User.create do |u|
   u.fname = "Julie"
-  u.lname = "Nguyen"
+  u.lname = "Newman"
   u.email = "julie@gmail.com"
   u.password = "julie"
 end
 
 user_6 = User.create do |u|
   u.fname = "Libby"
-  u.lname = "Frauenberger"
+  u.lname = "Frank"
   u.email = "libby@gmail.com"
   u.password = "libby"
 end
 
 user_7 = User.create do |u|
   u.fname = "Sarah"
-  u.lname = "Dayan"
+  u.lname = "Dean"
   u.email = "sarah@gmail.com"
   u.password = "sarah"
 end
 
 user_8 = User.create do |u|
   u.fname = "Laura"
-  u.lname = "Rodriguez"
+  u.lname = "Garcia"
   u.email = "laura@gmail.com"
   u.password = "laura"
 end
 
 user_9 = User.create do |u|
   u.fname = "Dan"
-  u.lname = "Muller"
+  u.lname = "Green"
   u.email = "dan@gmail.com"
   u.password = "dan"
 end
 
 user_10 = User.create do |u|
   u.fname = "Kenny"
-  u.lname = "Phuong"
+  u.lname = "Reed"
   u.email = "kenny@gmail.com"
   u.password = "kenny"
 end
@@ -194,7 +194,7 @@ end
 tutorial_2.steps << Step.create do |s|
   s.body = "Let the cake dry overnight. If stacking the cake, this is a very important step, to avoid the metallic color transferring to the rest of the cake."
   s.position = 7
-  s.step_image = File.new('app/assets/images/step/cake7.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/cake7.png', 'r')
 end
 
 # -------------------------
@@ -209,49 +209,49 @@ end
 tutorial_3.steps << Step.create do |s|
   s.body = "Put double sided tape on the corrugated plastic."
   s.position = 1
-  s.step_image = File.new('app/assets/images/step/light1.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/light1.png', 'r')
 end
 
 tutorial_3.steps << Step.create do |s|
   s.body = "Attach aluminum foil to corrugated plastic."
   s.position = 2
-  s.step_image = File.new('app/assets/images/step/light2.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/light2.png', 'r')
 end
 
 tutorial_3.steps << Step.create do |s|
   s.body = "Finish part of the lampshade. Make four pieces in total in the same way. Attach the aluminum foil with the base board."
   s.position = 3
-  s.step_image = File.new('app/assets/images/step/light3.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/light3.png', 'r')
 end
 
 tutorial_3.steps << Step.create do |s|
   s.body = "Make a hole in the corrugated plastic to exhaust heat from a fluorescent lamp."
   s.position = 4
-  s.step_image = File.new('app/assets/images/step/light4.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/light4.png', 'r')
 end
 
 tutorial_3.steps << Step.create do |s|
   s.body = "Screw the socket on the base board."
   s.position = 5
-  s.step_image = File.new('app/assets/images/step/light5.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/light5.png', 'r')
 end
 
 tutorial_3.steps << Step.create do |s|
   s.body = "Join sockets to the distribution cable."
   s.position = 6
-  s.step_image = File.new('app/assets/images/step/light6.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/light6.png', 'r')
 end
 
 tutorial_3.steps << Step.create do |s|
   s.body = "Install the fluorescent lamp. It's brightness is 400W in total."
   s.position = 7
-  s.step_image = File.new('app/assets/images/step/light7.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/light7.png', 'r')
 end
 
 tutorial_3.steps << Step.create do |s|
   s.body = "Fix light to the tripod and turn on!"
   s.position = 8
-  s.step_image = File.new('app/assets/images/step/light8.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/light8.png', 'r')
 end
 
 # --------------------------------------------
@@ -276,27 +276,27 @@ tutorial_4.steps << Step.create do |s|
 end
 
 tutorial_4.steps << Step.create do |s|
-  s.body = "Dip the apples, 1 at a time, into the boiling water for 20-30 seconds, this will remove the wax coating on the apples. Dry thoroughly and place onto a sheet pan lined with parchment or wax paper."
+  s.body = "Dip the apples into the boiling water for 20-30 seconds, this will remove the wax coating on the apples. Dry thoroughly and begin preparing the caramel."
   s.position = 3
-  s.step_image = nil
+  s.step_image = File.new('app/assets/images/step/caramel3.png', 'r')
 end
 
 tutorial_4.steps << Step.create do |s|
   s.body = "Prepare the caramel by adding caramel candies and milk to a medium saucepan over medium heat. Stay close and stir often while the candies melt. Once melted, remove from heat and allow to sit about 1 minute."
   s.position = 4
-  s.step_image = File.new('app/assets/images/step/caramel4.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/caramel4.png', 'r')
 end
 
 tutorial_4.steps << Step.create do |s|
   s.body = "Dip each apple in the caramel, turning slowly to coat. Continue to turn, allowing any excess to drip back into the saucepan."
   s.position = 5
-  s.step_image = File.new('app/assets/images/step/caramel5.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/caramel5.png', 'r')
 end
 
 tutorial_4.steps << Step.create do |s|
   s.body = "If desired, dip the bottoms of each apple into nuts, chocolate chips or other garnish."
   s.position = 6
-  s.step_image = File.new('app/assets/images/step/caramel6.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/caramel6.png', 'r')
 end
 
 tutorial_4.steps << Step.create do |s|
@@ -318,13 +318,13 @@ end
 tutorial_5.steps << Step.create do |s|
   s.body = "In a large bowl, combine the flour, baking powder, sugar, salt and ⅛ teaspoon cinnamon. Set aside. In a small bowl combine the egg and buttermilk. In a third dish, make your cinnamon-sugar topping by combining the ⅓ cup sugar and 2 teaspoons cinnamon. Set that aside too."
   s.position = 1
-  s.step_image = File.new('app/assets/images/step/apple_rings1.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/applerings_1.jpg', 'r')
 end
 
 tutorial_5.steps << Step.create do |s|
   s.body = "Next, slice the apples into ¼-inch thick slices, and use circle biscuit cutters in graduated sizes to make rings out of each slice. Discard the center circles containing the apple core."
   s.position = 2
-  s.step_image = File.new('app/assets/images/step/apple_rings2.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/applerings_2.jpg', 'r')
 end
 
 tutorial_5.steps << Step.create do |s|
@@ -348,7 +348,7 @@ end
 tutorial_5.steps << Step.create do |s|
   s.body = "Fry the rings in small batches, turning them to ensure browning on both sides."
   s.position = 6
-  s.step_image = File.new('app/assets/images/step/apple_rings6.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/applerings_6.jpg', 'r')
 end
 
 tutorial_5.steps << Step.create do |s|
@@ -360,13 +360,13 @@ end
 tutorial_5.steps << Step.create do |s|
   s.body = "Quickly transfer the apple rings, one by one, into the cinnamon-sugar mixture and coat evenly."
   s.position = 8
-  s.step_image = File.new('app/assets/images/step/apple_rings8.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/applerings_8.jpg', 'r')
 end
 
 tutorial_5.steps << Step.create do |s|
   s.body = "Transfer to a wire rack and serve warm."
   s.position = 9
-  s.step_image = File.new('app/assets/images/step/apple_rings9.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/applerings_9.jpg', 'r')
 end
 
 # ------------------------------------
@@ -381,37 +381,37 @@ end
 tutorial_6.steps << Step.create do |s|
   s.body = "Place pressed flowers in your case and play around with the different arrangements. Once you have found one that you like, take a snapshot of it for future reference."
   s.position = 1
-  s.step_image = File.new('app/assets/images/step/iphonecase1.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/iphonecase1.png', 'r')
 end
 
 tutorial_6.steps << Step.create do |s|
   s.body = "Dab a small amount of glue on the largest flower and carefully glue it to the case. Follow suit with the rest of your flowers until your arrangement is complete."
   s.position = 2
-  s.step_image = File.new('app/assets/images/step/iphonecase2.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/iphonecase2.png', 'r')
 end
 
 tutorial_6.steps << Step.create do |s|
   s.body = "Cut a 2 ft long piece of parchment paper and tape it down to your flat work surface. Pour resin into a plastic cup (3/8 inches high). Then pour the hardener (3/4 inches high). Stir the contents for 2 minutes. Pour contents into another cup, stir for 1 more minute and let it rest for 5 minutes."
   s.position = 3
-  s.step_image = File.new('app/assets/images/step/iphonecase3.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/iphonecase3.png', 'r')
 end
 
 tutorial_6.steps << Step.create do |s|
   s.body = "Pour the resin onto the center of the case and spread to the edge using a craft stick. Set the case on parchment paper to dry - one to two hours."
   s.position = 4
-  s.step_image = File.new('app/assets/images/step/iphonecase4.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/iphonecase4.png', 'r')
 end
 
 tutorial_6.steps << Step.create do |s|
   s.body = "Dip Q-tips in acetone and wipe any spills."
   s.position = 5
-  s.step_image = File.new('app/assets/images/step/iphonecase5.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/iphonecase5.png', 'r')
 end
 
 tutorial_6.steps << Step.create do |s|
   s.body = "Once your first coat of resin has dried, examine your case to make sure all the flowers have been properly coated. If needed, add a second coat of resin. Voila! You now have an embellished floral phone case to brighten up any conversation."
   s.position = 6
-  s.step_image = File.new('app/assets/images/step/iphonecase6.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/iphonecase6.png', 'r')
 end
 
 # -----------------------------
@@ -426,25 +426,25 @@ end
 tutorial_7.steps << Step.create do |s|
   s.body = "Cut the 2 by 6 in to 4 pieces. 2 that are 24 inches long and 2 that are 10 inches long. Assemble the pieces as shown, drilling the screws into the wood. Use washers to ensure the screws don't come through to the other side."
   s.position = 1
-  s.step_image = File.new('app/assets/images/step/swing1.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/swing1.png', 'r')
 end
 
 tutorial_7.steps << Step.create do |s|
   s.body = "Add distressing if desired and sand down the swing seat."
   s.position = 2
-  s.step_image = File.new('app/assets/images/step/swing2.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/swing2.png', 'r')
 end
 
 tutorial_7.steps << Step.create do |s|
   s.body = "Use a 1 inch wood drill bit and drill 4 holes. Paint or stain if desired."
   s.position = 3
-  s.step_image = File.new('app/assets/images/step/swing3.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/swing3.png', 'r')
 end
 
 tutorial_7.steps << Step.create do |s|
   s.body = "Cut two pieces of rope, 6 feet long and thread through the holes of the swing seat, tying a secure knot at the end of the ropes under the seat. Cut 2 more pieces of rope as long as you need to reach your tree branch. Attach one end of the rope to the tree using a secure knot and the other end to the tree swing using a hitch knot. Repeat for the other side and you have a swing!"
   s.position = 4
-  s.step_image = File.new('app/assets/images/step/swing4.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/swing4.png', 'r')
 end
 
 #-----------------------
@@ -459,19 +459,19 @@ end
 tutorial_8.steps << Step.create do |s|
   s.body = "Dust/vacuum the chair. Strain the paint to prevent it from clogging the sprayer."
   s.position = 1
-  s.step_image = File.new('app/assets/images/step/chair1.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/chair1.png', 'r')
 end
 
 tutorial_8.steps << Step.create do |s|
   s.body = "Apply 2 coats of paint and let it dry for 24 hours. Then apply a water-based top coat."
   s.position = 2
-  s.step_image = File.new('app/assets/images/step/chair2.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/chair2.png', 'r')
 end
 
 tutorial_8.steps << Step.create do |s|
   s.body = "The HomeRight Sprayer is easy to clean and lets you paint your wicker furniture any color you want!"
   s.position = 3
-  s.step_image = File.new('app/assets/images/step/chair3.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/chair3.png', 'r')
 end
 
 # ---------------------
@@ -492,7 +492,7 @@ end
 tutorial_9.steps << Step.create do |s|
   s.body = "Do the garland pose in yoga. It will open up the hips and improves balance. This pose will also increase flexibility in your thighs and ankles while toning your core. If the squatting maneuver is too difficult, then you can sit on a chair and lean your torso forward between your thighs."
   s.position = 2
-  s.step_image = File.new('app/assets/images/step/yoga1.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/yoga1.png', 'r')
 end
 
 tutorial_9.steps << Step.create do |s|
@@ -504,7 +504,7 @@ end
 tutorial_9.steps << Step.create do |s|
   s.body = "Do the perfect pose, it opens your hips while stretching your ankles and your back. This pose is often used for meditation, and you can hold it for as long as needed to center yourself. Yogis believe that this posture releases nervous energy and helps people who suffer from disorders like asthma."
   s.position = 4
-  s.step_image = File.new('app/assets/images/step/yoga2.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/yoga2.png', 'r')
 end
 
 # -------------------
@@ -546,19 +546,25 @@ end
 tutorial_11.steps << Step.create do |s|
   s.body = "Tightlining your eyes (also known as invisible eye liner) is a great way to add subtle definition to your peepers. Using clean fingers, gently lift your lashes upward. You'll see tiny gaps between your lash hairs, which you'll be filling in with eyeliner."
   s.position = 1
-  s.step_image = File.new('app/assets/images/step/eyes1.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/eyes1.png', 'r')
 end
 
 tutorial_11.steps << Step.create do |s|
   s.body = "Using your eyeliner, lightly dab it in between each individual lash and get as close to the root as possible."
   s.position = 2
-  s.step_image = File.new('app/assets/images/step/eyes2.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/eyes2.png', 'r')
 end
 
 tutorial_11.steps << Step.create do |s|
-  s.body = "Technically you’re done, but if you’d like to intensify the look even more, you can tightline your bottom lash line, too. Gently lift lower lashes downwards, and fill in the gaps between each lash."
+  s.body = "Technically you’re done, but if you’d like to intensify the look even more, you can tightline your bottom lash line, too."
   s.position = 3
-  s.step_image = File.new('app/assets/images/step/eyes3.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/eyes3.png', 'r')
+end
+
+tutorial_11.steps << Step.create do |s|
+  s.body = "Gently lift lower lashes downwards, and fill in the gaps between each lash."
+  s.position = 4
+  s.step_image = File.new('app/assets/images/step/eyes4.png', 'r')
 end
 
 # ----------------------------
@@ -606,7 +612,7 @@ end
 tutorial_13.steps << Step.create do |s|
   s.body = "Plant succulents in well draining soil made for cacti and succulents. If you can’t find that kind of soil mix, simply mix some perlite with regular potting soil."
   s.position = 1
-  s.step_image = File.new('app/assets/images/step/succulents1.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/succulents1.png', 'r')
 end
 
 tutorial_13.steps << Step.create do |s|
@@ -618,13 +624,13 @@ end
 tutorial_13.steps << Step.create do |s|
   s.body = "Be sure they are planted in a well draining pot. If they are planted in a container with no drainage, they will rot."
   s.position = 3
-  s.step_image = File.new('app/assets/images/step/succulents2.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/succulents2.png', 'r')
 end
 
 tutorial_13.steps << Step.create do |s|
   s.body = " If you want to plant them in a non draining container, just be sure they have plenty of room at the bottom of the container for drainage. For the mason jar planters above, I filled the bottom of each jar with stones before planting them."
   s.position = 4
-  s.step_image = File.new('app/assets/images/step/succulents4.jpg', 'r')
+  s.step_image = File.new('app/assets/images/step/succulents4.png', 'r')
 end
 
 tutorial_13.steps << Step.create do |s|

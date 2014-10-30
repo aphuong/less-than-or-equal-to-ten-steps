@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   get '/tutorials/search' => 'tutorials#search'
 
   # shows 1 tutorial
-  get '/tutorials/:id' => 'tutorials#show', as: :show_tutorials
+  get '/tutorials/:id' => 'tutorials#show', as: :show_tutorial
 
   # # lets users create a tutorial with steps
   get '/users/:id/tutorials/new' => 'tutorials#new', as: :new_tutorial

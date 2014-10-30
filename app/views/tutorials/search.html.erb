@@ -9,13 +9,13 @@
           <div class="tutorials-container">
 
             <div>
-            <%= link_to show_tutorials_path(t) do %>
+            <%= link_to show_tutorial_path(t) do %>
               <%= image_tag t.main_image (:medium) %>
             <% end %>
             </div>
 
              <div>
-              <%= link_to t.title, show_tutorials_path(t) %>
+              <%= link_to t.title, show_tutorial_path(t) %>
               <p>submitted by: <%= t.user.fname %></p>
             </div>
 

@@ -48,12 +48,12 @@
         <% @user.tutorials.each do |tutorial| %>
           <div class="tutorials-container">
             <div>
-              <%= link_to show_tutorials_path(tutorial) do %>
+              <%= link_to show_tutorial_path(tutorial) do %>
                 <%= image_tag tutorial.main_image (:medium), :class => "image" %>
               <% end %>
             </div>
             <div>
-              <%= link_to tutorial.title, show_tutorials_path(tutorial) %>
+              <%= link_to tutorial.title, show_tutorial_path(tutorial) %>
             </div>
           </div>
         <% end %>
