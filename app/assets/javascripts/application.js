@@ -53,6 +53,19 @@ $(document).ready(function(){
     $(".edit-text p").toggle(300);
   });
 
+  $(".like-btn").on('ajax:complete', function(event){
+    $(event.currentTarget).parent().fadeIn();
+  });
+
+
+  // click counter
+  // var clicks = 0
+
+  // $(".likes").click(function(){
+  //   clicks =+ 1
+  //   document.getElementById("clicks").innerHTML = clicks;
+  // });
+
  
 
   // $(".edit-btn").hover(function() {

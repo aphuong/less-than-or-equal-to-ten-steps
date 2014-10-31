@@ -50,4 +50,5 @@ Rails.application.routes.draw do
   post '/follow' => 'users#follow', as: :follow_user
   post '/unfollow' => 'users#unfollow', as: :unfollow_user
 
+  get '/tutorials/:id/like' => 'tutorials#like', as: :like_tutorial
 end

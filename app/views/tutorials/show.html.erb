@@ -34,12 +34,16 @@
         </div>
 
         <div class="tutorial-text">
+
+          <div class="likes"><i class="fa fa-heart"></i><span id="clicks"></span></div>
+
           <p><strong>Shared by:</strong> <%= link_to @tutorial.user.fname, user_path(@tutorial.user)%></p>
 
           <p><strong>Supplies Needed:</strong></p>
           <p class="supplies"><%= @tutorial.supplies %></p>
 
           <p>#<%= link_to @tutorial.category.name, categorized_tutorials_path(@tutorial.category) %></p>
+
         </div>
 
       <% end %>

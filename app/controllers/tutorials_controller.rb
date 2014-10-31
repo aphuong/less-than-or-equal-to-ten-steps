@@ -1,12 +1,12 @@
 class TutorialsController < ApplicationController
 
   def index
-    @user = User.new
+    # @user = User.new
     @tutorials = Tutorial.all
   end
 
   def show
-    @user = User.new
+    # @user = User.new
     @tutorial = Tutorial.find(params[:id])
   end
 
@@ -49,9 +49,11 @@ class TutorialsController < ApplicationController
 
     if @tutorial.steps.count < 10
       @step = Step.new(step_params)
-      @step.save
-      @tutorial.steps << @step
-      flash[:notice] = "New step just created!"
+      if @step.save && @tutorial.steps << @step
+        flash[:notice] = "New step just created!"
+      else
+        flash[:alert] = "Whoops."
+      end
       redirect_to new_tutorial_step_path(@tutorial)
     else
       flash[:alert] = "Sorry, something went wrong. Please try again."
@@ -71,12 +73,12 @@ class TutorialsController < ApplicationController
   end
 
   def categorized
-    @user = User.new
+    # @user = User.new
     @category = Category.find(params[:id])
   end
 
   def search
-    @user = User.new
+    # @user = User.new
     tutorials = Tutorial.all
     @keyword = params[:query]
 
@@ -84,7 +86,20 @@ class TutorialsController < ApplicationController
       words = tut.title.downcase.split(' ')
       words.include? @keyword.downcase
     end
+    # @tutorials = Tutorial.where("title ILIKE ?", "%#{params[:query]}%")
+    # Postgres.app
 
+  end
+
+  def like
+    @tutorial = Tutorial.find(params[:id])
+    @tutorial.likes = 0 if @tutorial.likes.nil?
+    @tutorial.likes = @tutorial.likes + 1
+    if @tutorial.save
+      respond_to do |format|
+        format.js
+      end
+    end
   end
 
   private

@@ -1,8 +1,8 @@
-<%= form_for @user, html: { id: "sign-up-form" } do |f| %>
+<%= form_for User.new, html: { id: "sign-up-form" } do |f| %>
 
-  <% if @user.errors.any? %>
+  <% if User.new.errors.any? %>
     <ul>
-      <% @user.errors.full_messages.each do |message| %>
+      <% User.new.errors.full_messages.each do |message| %>
         <l1><%= message %></l1>
       <%end%>
     </ul>

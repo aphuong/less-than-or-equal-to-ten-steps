@@ -7,7 +7,7 @@
     </h1>
 
     <% @category.tutorials.each do |t| %>
-      <div class="tutorials-container">
+      <div class="tutorials-container", data-id="<%= t.id %>">
         <div>
           <%= link_to show_tutorial_path(t) do %>
             <% if t.main_image.exists? %>
@@ -17,6 +17,16 @@
         </div>
         <div>
           <%= link_to t.title, show_tutorial_path(t) %>
+          <div class="likes">
+            Loves:
+            <span class="count">
+              <%= t.likes || 0 %>
+            </span>
+
+            <%= link_to like_tutorial_path(t), remote: true, class: "like-btn" do %>
+             <i class="fa fa-heart"></i>
+           <% end %>
+          </div>
           <p>submitted by: <%= t.user.fname %></p>
         </div>
       </div>

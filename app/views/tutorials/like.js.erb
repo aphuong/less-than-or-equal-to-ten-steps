@@ -1,0 +1,3 @@
+// $(".count").html(<%= @tutorial.likes %>)
+
+$(<%= "[data-id=#{@tutorial.likes}]" %>).text(<%= @tutorial.likes %>)
