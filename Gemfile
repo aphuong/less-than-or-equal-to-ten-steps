@@ -6,6 +6,7 @@ gem 'gravtastic'
 gem 'best_in_place'
 gem 'pry-rails'
 gem 'bcrypt-ruby', '~> 3.1.5', require: "bcrypt"
+gem 'factory_girl_rails'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'

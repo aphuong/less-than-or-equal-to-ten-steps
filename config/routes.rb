@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   # shows user's profile page (see all their tutorials)
-  get '/users/:id' => 'users#show', as: :user
+  get '/users/:id' => 'users#show'#, as: :user
 
   # lets users' edit profile
   # get '/users/:id/edit' => 'users#edit'
