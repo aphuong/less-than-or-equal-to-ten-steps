@@ -7,7 +7,7 @@ gem 'best_in_place'
 gem 'pry-rails'
 gem 'bcrypt', require: "bcrypt"
 gem 'factory_girl_rails'
-gem 'passenger'
+
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
