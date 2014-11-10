@@ -35,39 +35,39 @@ RSpec.describe UsersController, :type => :controller do
   describe "GET show" do
     it "assigns all users as @users" do 
       user = create(:user)
-      get :show, {}, attributes_for(:session)
+      get :show, { id: user.to_param }, attributes_for(:session)
       expect(assigns(:users)).to eq([user])
     end
   end
 
   describe "POST create" do
     describe "with valid params" do
-      xit "creates a new user" do
+      it "creates a new user" do
         expect {
-          post :create, {user: valid_attributes}, session_id
+          post :create, {user: attributes_for(:user)}, attributes_for(:session)
         }.to change(User, :count).by(1)
       end
 
-      xit "assigns a newly created user as @user" do
-        post :create, {user: valid_attributes}, session_id
+      it "assigns a newly created user as @user" do
+        post :create, {user: attributes_for(:user)}, attributes_for(:session)
         expect(assigns(:user)).to be_a(User)
         expect(assigns(:user)).to be_persisted
       end
 
-      xit "redirects to the created user" do
-        post :create, {user: valid_attributes}, session_id
+      it "redirects to the created user" do
+        post :create, {user: attributes_for(:user)}, attributes_for(:session)
         expect(response).to redirect_to(User.last)
       end
     end
 
     describe "with invalid params" do
-      xit "assigns a newly created but unsave user as @user" do
-        post :create, {user: invalid_attributes}, session_id
+      it "assigns a newly created but unsave user as @user" do
+        post :create, {user: attributes_for(:user)}, attributes_for(:session)
         expect(assigns(:user)).to be_a_new(User)
       end
 
-      xit "redirects to 'root' path" do
-        post :create, {user: invalid_attributes}, session_id
+      it "redirects to 'root' path" do
+        post :create, {user: attributes_for(:user)}, attributes_for(:session)
         expect(response).to redirect_to(root_url)
       end
     end
@@ -75,8 +75,8 @@ RSpec.describe UsersController, :type => :controller do
 
 
   describe "POST follow" do
-    xit "creates a new relationship" do
-      current_user = User.create! (valid_attributes)
+    it "creates a new relationship" do
+      current_user = create(:user)
       user2 = User.create! (valid_attributes2)
       expect {
         post :follow, {id: user2.to_param}, session_id
