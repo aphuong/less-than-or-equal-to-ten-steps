@@ -7,6 +7,8 @@ gem 'best_in_place'
 gem 'pry-rails'
 gem 'bcrypt', require: "bcrypt"
 gem 'factory_girl_rails'
+gem 'passenger'
+gem 'pg'
 
 
 group :development, :test do
