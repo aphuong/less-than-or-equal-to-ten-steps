@@ -162,7 +162,7 @@ tutorial_2.steps << Step.create do |s|
 end
 
 tutorial_2.steps << Step.create do |s|
-  s.body = "Using a wide paintbrush, cover the entire cake with a generous layer of piping gel. If you are stacking another cake layer on top of the sequin layer, trace out the diameter of the upper tier onto the sequin layer, as you won't put sequins here."
+  s.body = "Cover entire cake with generous layer of piping gel. If stacking another cake layer on top of the sequin layer, trace out the diameter of the upper tier onto the sequin layer."
   s.position = 2
   s.step_image = File.new('app/assets/images/step/cake2.jpg', 'r')
 end
@@ -316,7 +316,7 @@ tutorial_5 = Tutorial.create do |t|
 end
 
 tutorial_5.steps << Step.create do |s|
-  s.body = "In a large bowl, combine the flour, baking powder, sugar, salt and ⅛ teaspoon cinnamon. Set aside. In a small bowl combine the egg and buttermilk. In a third dish, make your cinnamon-sugar topping by combining the ⅓ cup sugar and 2 teaspoons cinnamon. Set that aside too."
+  s.body = "Combine flour, baking powder, sugar, salt and ⅛ teaspoon cinnamon. In a small bowl combine egg and buttermilk. In a third dish, make cinnamon-sugar topping by combining ⅓ cup sugar and 2 teaspoons cinnamon."
   s.position = 1
   s.step_image = File.new('app/assets/images/step/applerings_1.jpg', 'r')
 end
@@ -375,7 +375,7 @@ tutorial_6 = Tutorial.create do |t|
   t.main_image = File.new('app/assets/images/tutorial/iphone_case.jpg', 'r')
   t.user_id = user_6.id
   t.category_id = category_6.id
-  t.supplies = "Pressed Dried Flowers, Solid Flat White iPhone Case, Clear Craft Glue, Tape, Scissors, Parchment Paper, Ruler, Thin-tip Permanent Marker, Timer, 2 Clear Plastic Cups, 2 Wooden Craft Sticks, 50/50 Clear-Casting Epoxy Resin, Acetone, Q-tips, Glitter"
+  t.supplies = "Pressed Dried Flowers, Solid Flat White iPhone Case, Clear Craft Glue, Tape, Scissors, Parchment Paper, Ruler, Timer, Cups, 2 Wooden Craft Sticks, 50/50 Clear-Casting Epoxy Resin, Acetone, Q-tips, Glitter"
 end
 
 tutorial_6.steps << Step.create do |s|
@@ -391,7 +391,7 @@ tutorial_6.steps << Step.create do |s|
 end
 
 tutorial_6.steps << Step.create do |s|
-  s.body = "Cut a 2 ft long piece of parchment paper and tape it down to your flat work surface. Pour resin into a plastic cup (3/8 inches high). Then pour the hardener (3/4 inches high). Stir the contents for 2 minutes. Pour contents into another cup, stir for 1 more minute and let it rest for 5 minutes."
+  s.body = "Tape parchment paper to work surface. Pour resin(3/8 inches high), hardener(3/4 inches high) into cup. Stir for 2 minutes. Pour into another cup, stir for 1 minute, let it rest for 5 minutes."
   s.position = 3
   s.step_image = File.new('app/assets/images/step/iphonecase3.png', 'r')
 end
@@ -409,7 +409,7 @@ tutorial_6.steps << Step.create do |s|
 end
 
 tutorial_6.steps << Step.create do |s|
-  s.body = "Once your first coat of resin has dried, examine your case to make sure all the flowers have been properly coated. If needed, add a second coat of resin. Voila! You now have an embellished floral phone case to brighten up any conversation."
+  s.body = "Once your first coat of resin has dried, examine your case to make sure all the flowers have been properly coated. If needed, add a second coat of resin."
   s.position = 6
   s.step_image = File.new('app/assets/images/step/iphonecase6.png', 'r')
 end
@@ -424,7 +424,7 @@ tutorial_7 = Tutorial.create do |t|
 end
 
 tutorial_7.steps << Step.create do |s|
-  s.body = "Cut the 2 by 6 in to 4 pieces. 2 that are 24 inches long and 2 that are 10 inches long. Assemble the pieces as shown, drilling the screws into the wood. Use washers to ensure the screws don't come through to the other side."
+  s.body = "Cut the 2x6 into 4 pieces. 2 that are 24 inches long and 2 that are 10 inches long. Drill the screws into the wood. Use washers to ensure the screws don't come through to the other side."
   s.position = 1
   s.step_image = File.new('app/assets/images/step/swing1.png', 'r')
 end
@@ -442,7 +442,7 @@ tutorial_7.steps << Step.create do |s|
 end
 
 tutorial_7.steps << Step.create do |s|
-  s.body = "Cut two pieces of rope, 6 feet long and thread through the holes of the swing seat, tying a secure knot at the end of the ropes under the seat. Cut 2 more pieces of rope as long as you need to reach your tree branch. Attach one end of the rope to the tree using a secure knot and the other end to the tree swing using a hitch knot. Repeat for the other side and you have a swing!"
+  s.body = "Cut two pieces of rope, 6 feet long and thread through holes of swing seat, tying a secure knot at the end of the ropes."
   s.position = 4
   s.step_image = File.new('app/assets/images/step/swing4.png', 'r')
 end
@@ -484,25 +484,25 @@ tutorial_9 = Tutorial.create do |t|
 end
 
 tutorial_9.steps << Step.create do |s|
-  s.body = "Do a camel pose. It will open up the chest and increase the flexibility of the spine. The exercise tightens the waist and strengthens the arms and shoulders as well. Yogis believe that this posture opens up your respiratory system so that you can take in more oxygen with each breath."
+  s.body = "Do a camel pose. It will open up the chest and increase the flexibility of the spine. The exercise tightens the waist and strengthens the arms and shoulders as well."
   s.position = 1
   s.step_image = nil
 end
 
 tutorial_9.steps << Step.create do |s|
-  s.body = "Do the garland pose in yoga. It will open up the hips and improves balance. This pose will also increase flexibility in your thighs and ankles while toning your core. If the squatting maneuver is too difficult, then you can sit on a chair and lean your torso forward between your thighs."
+  s.body = "Do the garland pose in yoga. It will open up the hips and improves balance. This pose will also increase flexibility in your thighs and ankles while toning your core."
   s.position = 2
   s.step_image = File.new('app/assets/images/step/yoga1.png', 'r')
 end
 
 tutorial_9.steps << Step.create do |s|
-  s.body = "Do the reclined bound angle pose in yoga. This simple pose stretches the groin and inner thighs while opening up the chest. Make sure that your spine does not arch as you perform this pose. If you need support, you can place a pillow under your ankles to ease the stretch in your lower body or a pillow under your head so that you can avoid neck compression. This pose may also bring relief from fatigue, insomnia and mild depression."
+  s.body = "Do the reclined bound angle pose in yoga. This simple pose stretches the groin and inner thighs while opening up the chest. Make sure that your spine does not arch as you perform this pose."
   s.position = 3
   s.step_image = nil
 end
 
 tutorial_9.steps << Step.create do |s|
-  s.body = "Do the perfect pose, it opens your hips while stretching your ankles and your back. This pose is often used for meditation, and you can hold it for as long as needed to center yourself. Yogis believe that this posture releases nervous energy and helps people who suffer from disorders like asthma."
+  s.body = "Do the perfect pose, it opens your hips while stretching your ankles and your back. This pose is often used for meditation, and you can hold it for as long as needed to center yourself."
   s.position = 4
   s.step_image = File.new('app/assets/images/step/yoga2.png', 'r')
 end
@@ -529,7 +529,7 @@ tutorial_10.steps << Step.create do |s|
 end
 
 tutorial_10.steps << Step.create do |s|
-  s.body = "Lastly, go back and connect the dots to the tip of your nail and seal with a top coat. Don't worry about perfection, it should look drippy, after all. For a more gory version, why not try an oxblood hue on a bare nail?"
+  s.body = "Lastly, go back and connect the dots to the tip of your nail and seal with a top coat. It should look drippy. For a more gory version, why not try an oxblood hue on a bare nail?"
   s.position = 3
   s.step_image = nil
 end
@@ -544,7 +544,7 @@ tutorial_11 = Tutorial.create do |t|
 end
 
 tutorial_11.steps << Step.create do |s|
-  s.body = "Tightlining your eyes (also known as invisible eye liner) is a great way to add subtle definition to your peepers. Using clean fingers, gently lift your lashes upward. You'll see tiny gaps between your lash hairs, which you'll be filling in with eyeliner."
+  s.body = "Tightlining your eyes is a great way to add subtle definition. Gently lift your lashes upward. You'll see tiny gaps between your lash hairs, which you'll be filling in with eyeliner."
   s.position = 1
   s.step_image = File.new('app/assets/images/step/eyes1.png', 'r')
 end
@@ -628,7 +628,7 @@ tutorial_13.steps << Step.create do |s|
 end
 
 tutorial_13.steps << Step.create do |s|
-  s.body = " If you want to plant them in a non draining container, just be sure they have plenty of room at the bottom of the container for drainage. For the mason jar planters above, I filled the bottom of each jar with stones before planting them."
+  s.body = "If you want to plant them in a non draining container, just be sure they have plenty of room at the bottom of the container for drainage. For the mason jar planters above, I filled the bottom of each jar with stones before planting them."
   s.position = 4
   s.step_image = File.new('app/assets/images/step/succulents4.png', 'r')
 end
