@@ -1,23 +1,24 @@
-<div class="wrapper">
+<div class="full-background">
+  <div class="categorized-container">
 
-  <h1>List of all tutorials</h1>
+    <h1>List of all tutorials</h1>
 
-  <% @tutorials.each do |tutorial| %>
-    <div class="tutorials-container">
+    <% @tutorials.each do |tutorial| %>
+      <div class="tutorials-container" data-id="<%= tutorial.id %>">
 
-      <div>
-        <% if tutorial.main_image.exists? %>
-          <%= link_to show_tutorial_path(tutorial) do %>
-            <%= image_tag tutorial.main_image (:medium) %>
-            <div>
-              <%= tutorial.title %>
-              <div class="likes"><i class="fa fa-heart"></i></div>
-              <p>submitted by: <%= tutorial.user.fname %></p>
-            </div>
+        <div>
+          <% if tutorial.main_image.exists? %>
+            <%= link_to show_tutorial_path(tutorial) do %>
+              <%= image_tag tutorial.main_image (:medium) %>
+              <div>
+                <p><%= tutorial.title %></p>
+                <%= render partial: 'loves', locals: { tutorial: tutorial} %>
+                <p>submitted by: <%= tutorial.user.fname %></p>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
-
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

@@ -1,37 +1,31 @@
 <div class="full-background">
   <div class="search-container">
 
-      <% if @tutorials.any? %>
-        <h1>Search Result:</h1>
+    <% if @tutorials.any? %>
+      <h1>Search Result:</h1>
 
-        <% @tutorials.each do |t| %>
-
-          <div class="tutorials-container">
-
-            <div>
-            <%= link_to show_tutorial_path(t) do %>
-              <%= image_tag t.main_image (:medium) %>
+      <% @tutorials.each do |tutorial| %>
+        <div class="tutorials-container" data-id="<%= tutorial.id %>">
+          <div>
+            <%= link_to show_tutorial_path(tutorial) do %>
+              <%= image_tag tutorial.main_image (:medium) %>
             <% end %>
-            </div>
-
-             <div>
-              <%= link_to t.title, show_tutorial_path(t) %>
-              <div class="likes"><i class="fa fa-heart"></i></div>
-              <p>submitted by: <%= t.user.fname %></p>
-            </div>
-
           </div>
-
-        <% end %>
-      <% else %>
-          <p>Looks like there are no tutorial titles containing that keyword.</p>
-          <%= link_to "Click here to explore all.", tutorials_path, class: "create-btn"%>
+          <div>
+            <p><%= link_to tutorial.title, show_tutorial_path(tutorial) %></p>
+            <%= render partial: 'loves', locals: { tutorial: tutorial} %>
+            <p>submitted by: <%= tutorial.user.fname %></p>
+          </div>
+        </div>
       <% end %>
 
+    <% else %>
+      <p>Looks like there are no tutorial titles containing that keyword.</p>
+      <%= link_to "Click here to explore all.", tutorials_path, class: "create-btn"%>
+    <% end %>
+
   </div>
-
 </div>
-
 
 
        

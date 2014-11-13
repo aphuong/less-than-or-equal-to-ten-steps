@@ -53,9 +53,9 @@ $(document).ready(function(){
     $(".edit-text p").toggle(300);
   });
 
-  $(".like-btn").on('ajax:complete', function(event){
-    $(event.currentTarget).parent().fadeIn();
-  });
+  // $(".like-btn").on('ajax:success', function(){
+  //   $(".count").fadeIn();
+  // });
 
 
   // click counter

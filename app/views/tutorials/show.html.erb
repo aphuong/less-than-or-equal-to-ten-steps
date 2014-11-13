@@ -17,6 +17,8 @@
         </div>
 
         <div class="tutorial-text">
+          <%= render partial: 'loves', locals: { tutorial: @tutorial} %>
+
           <p><strong>Shared by:</strong> <%= link_to @tutorial.user.fname, user_path(@tutorial.user) %></p>
           <p class="time">Created: <%= @tutorial.created_at.strftime("%m/%d/%Y at %I:%M%p") %></p>
 
@@ -33,9 +35,9 @@
           <%= image_tag @tutorial.main_image (:medium) %>
         </div>
 
-        <div class="tutorial-text">
+        <div class="tutorial-text" data-id="<%= @tutorial.id %>">
 
-          <div class="likes"><i class="fa fa-heart"></i><span id="clicks"></span></div>
+          <%= render partial: 'loves', locals: { tutorial: @tutorial} %>
 
           <p><strong>Shared by:</strong> <%= link_to @tutorial.user.fname, user_path(@tutorial.user)%></p>
 
@@ -52,7 +54,6 @@
 
   <div class="column right">
       <% @tutorial.steps.each_with_index do |step, i| %>
-        <div class="step-wrapper">
 
           <div class="step-text">
             <strong>Step <%= i + 1 %>.</strong>
@@ -68,14 +69,9 @@
           <% if step.step_image.exists? %>
             <div class="step-image">
               <%= image_tag step.step_image (:medium) %>
-            </div> 
-          <% else %>
-            <div class="step-image invisible">
-              <%= image_tag step.step_image (:medium) %>
-            </div>   
+            </div>
           <% end %>
           
-        </div>
       <% end %>
   </div>
 

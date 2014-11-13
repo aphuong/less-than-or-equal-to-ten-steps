@@ -1,0 +1,8 @@
+<div class="likes">
+  <%= link_to like_tutorial_path(tutorial), remote: true, class: "like-btn" do %>
+    <span class="love-btn">
+      <i class="fa fa-heart"></i> LOVES
+      <span class="count"><%= tutorial.likes || 0 %></span>
+    </span>
+  <% end %>
+</div>

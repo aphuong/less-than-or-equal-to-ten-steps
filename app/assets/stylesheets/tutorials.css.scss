@@ -47,16 +47,9 @@
   width: 100%;
 }
 
-.step-wrapper {
-  margin-bottom: 10px;
-  // width: 65%;
-  // margin-left: 17px;
-  // text-align: center;
-  // display: inline-block;
-  // vertical-align: top;
-  // border-radius: 4px;
-  // box-shadow: 0 4px 2px -2px rgba(100, 100, 100, 0.4);
-}
+// .step-wrapper {
+//   margin-bottom: 10px;
+// }
 
 .step-text {
   text-align: left;
@@ -77,6 +70,7 @@
   background: #FFF;
   border-radius: 4px;
   box-shadow: 0 4px 2px -2px rgba(100, 100, 100, 0.4);
+  margin-bottom: 10px;
 }
 
 .steps-wrapper {
@@ -175,5 +169,25 @@
   color: #fff;
   padding: 10px 30px;
   border-radius: 4px;
+}
+
+.love-btn {
+  border: $light;
+  padding: 4px;
+  border-radius: 4px;
+  background: $hover;
+  color: #fff;
+  font-size: $small;
+  font-family: $font-alternate;
+  
+  &:hover {
+    background: $secondary-color;
+    color: $primary-color;
+  }
+}
+
+.count {
+  border-left: $light;
+  padding-left: 4px;
 }
 
