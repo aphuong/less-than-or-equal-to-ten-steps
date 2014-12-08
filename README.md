@@ -1,4 +1,4 @@
-# Less Than or Equal to Ten Ways
+# Less Than or Equal to Ten Steps
 
 ### Description
 Inspired by DIY projects and the desire to learn from other people, I built this site to be a place to browse tutorials, develop new skills and share your knowledge. Often times I'll stumble upon awesome ideas and projects online, but with my busy schedule, it's tough to find the time to complete lengthy projects. Hence, the name of the site - requiring that all tutorials be less than or equal to 10 steps.
@@ -6,7 +6,7 @@ Inspired by DIY projects and the desire to learn from other people, I built this
 ### Set Up
 Pull down the repository:
 ```
-git clone git@github.com:aphuong/less-than-or-equal-to-ten-ways.git
+git clone git@github.com:aphuong/less-than-or-equal-to-ten-steps.git
 ```
 
 Load required gems:
