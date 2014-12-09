@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+ruby '2.1.2'
+
 
 gem 'bourbon'
 gem 'paperclip'
@@ -7,8 +9,9 @@ gem 'best_in_place'
 gem 'pry-rails'
 gem 'bcrypt', require: "bcrypt"
 gem 'factory_girl_rails'
-gem 'passenger'
+# gem 'passenger'
 gem 'pg'
+gem 'rails_12factor', group: :production
 
 
 group :development, :test do
@@ -20,7 +23,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
